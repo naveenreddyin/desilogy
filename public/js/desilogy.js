@@ -25,6 +25,7 @@ google.maps.event.addDomListener(window, 'load', function () {
                 // mesg += "\nLatitude: " + latitude;
                 // mesg += "\nLongitude: " + longitude;
                 // alert(mesg);
+                // console.log(place.geometry.location.lat());
                 var city = getAddressComponent(place, 'locality');
                 var postal_town = getAddressComponent(place, 'postal_town');
                 var country = getAddressComponent(place, 'country');
@@ -38,7 +39,7 @@ google.maps.event.addDomListener(window, 'load', function () {
                     $('#city').val(postal_town);
                 else
                     $('#city').val(city);
-                
+
                 $('#country').val(country);
 
                 $('#field-data-restaurant-city-country-group').show();

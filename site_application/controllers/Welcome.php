@@ -23,4 +23,29 @@ class Welcome extends CI_Controller {
 		$this->load->view('head');
 		$this->load->view('welcome_message');
 	}
+
+	public function login()
+	{	
+		if($_SERVER['REQUEST_METHOD'] == 'GET'){
+			$this->load->view('head');
+			$this->load->view('auth/login');
+		}
+		else{
+			die('no');
+		}
+		
+	}
+
+	public function register()
+	{
+		if($_SERVER['REQUEST_METHOD'] == 'GET'){
+			
+			$this->load->view('head');
+			$this->load->view('auth/login');
+		}
+		else{
+			print_r($_REQUEST);
+		}
+
+	}
 }

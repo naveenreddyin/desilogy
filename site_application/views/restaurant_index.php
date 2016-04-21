@@ -20,9 +20,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   		</div>
   		<div class="form-group">
   			<div class="row">
-      			<div class="col-sm-3"><label>First name</label><input type="text" name="firstname" id="firstname" class="form-control" placeholder="First">
+      			<div class="col-sm-3"><label>First name</label><input type="text" name="firstname" id="firstname" class="form-control" placeholder="First"/>
       			</div>
-      			<div class="col-sm-3"><label>Last name</label><input type="text" name="lastname" class="form-control" placeholder="Last"></div>
+      			<div class="col-sm-3"><label>Last name</label><input type="text" name="lastname" class="form-control" placeholder="Last"/></div>
       		</div>
     	</div>
   		
@@ -30,7 +30,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<div class="row">
 				<div class="col-sm-6">
 					<label>Enter City and Country</label>
-					<input name="address" id="address" type="text" placeholder="Start typing your address" class="form-control">
+					<input name="address" id="address" type="text" placeholder="Start typing your address" class="form-control"/>
 				</div>
 
 			</div>
@@ -39,11 +39,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<div class="row">
 				<div class="col-sm-3">
 					<label>Street</label>
-					<input id="street" name="street" type="text" placeholder="Street" class="form-control">
+					<input id="street" name="street" type="text" placeholder="Street" class="form-control"/>
 				</div>
 				<div class="col-sm-3">
 					<label>Postal Code</label>
-					<input id="postal-code" name="postal_code" type="text" placeholder="Postal Code" class="form-control">
+					<input id="postal-code" name="postal_code" type="text" placeholder="Postal Code" class="form-control"/>
 				</div>
 				
 			</div>
@@ -53,11 +53,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<div class="row">
 				<div class="col-sm-3">
 					<label>City</label>
-					<input id="city" type="text" placeholder="City" class="form-control" name="city">
+					<input id="city" type="text" placeholder="City" class="form-control" name="city"/>
 				</div>
 				<div class="col-sm-3">
 					<label>Country</label>
-					<input id="country" type="text" placeholder="Country" class="form-control" name="country">
+					<input id="country" type="text" placeholder="Country" class="form-control" name="country"/>
+					<input type="hidden" id="lat" name="lat" />
+					<input type="hidden" id="long" name="long" />
 				</div>
 				
 			</div>
@@ -69,7 +71,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<div class="row">
 				<div class="col-sm-3">
 					<label>Phone</label>
-					<input name="phone" id="phone" type="tel" placeholder="Enter Phone with country code" class="form-control">
+					<input name="phone" id="phone" type="tel" placeholder="Enter Phone with country code" class="form-control"/>
 				</div>
 				
 				

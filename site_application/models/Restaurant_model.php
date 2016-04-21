@@ -26,6 +26,20 @@
                 return $query->result();
         }
 
+        public function get_restaurant_details($rid){
+                $query = $this->db->select('*')->
+                from('restaurant')
+                ->join('field_data_restaurant_address as address',
+                        'address.rid = restaurant.rid', 'left')
+                ->join('field_data_restaurant_name as name', 'name.rid = restaurant.rid', 'left')
+                ->join('field_data_restaurant_phone as phone', 'phone.rid = restaurant.rid', 'left')
+                ->join('field_data_restaurant_main_image as image', 'image.rid = restaurant.rid', 'left')
+                ->join('field_data_restaurant_website as website', 'website.rid = restaurant.rid', 'left')->get();
+
+                return $query->result();
+
+        }
+
         public function insert_entry()
         {
                 $data = array('name' => $_POST['name'], 'body' => $_POST['body'], 'created' => time());
@@ -57,7 +71,10 @@
                         'city' => $_POST['city'],
                         'country' => $_POST['country'],
                         'postal_code' => $_POST['postal_code'],
-                        'street' => $_POST['street']
+                        'street' => $_POST['street'],
+                        'full_address' => $_POST['address'],
+                        'lat' => $_POST['lat'],
+                        'long' => $_POST['long']
                         );
 
                 $this->db->insert($this->field_data_address, $data);

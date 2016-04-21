@@ -1,7 +1,9 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Restaurant extends CI_Controller {
+include_once(APPPATH.'core/Restaurant_Controller.php');
+
+class Restaurant extends Restaurant_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -57,7 +59,9 @@ class Restaurant extends CI_Controller {
 
 		$this->restaurant->insert_website($inserted_id);
 
-		$config['upload_path'] = APPPATH . 'uploads/';
+		$upload_path = realpath(APPPATH . '../public/uploads');
+
+		$config['upload_path'] = $upload_path;
 		$config['allowed_types'] = 'gif|jpg|png';
 		$config['max_size']	= '500';
 		$config['max_width']  = '1024';
@@ -90,7 +94,13 @@ class Restaurant extends CI_Controller {
 	}
 
 	public function browse($rid){
-
+		$this->load->model('restaurant_model', 'restaurant');
+		$data['query'] = $this->restaurant->get_restaurant_details($rid)[0];
+		// if($data['query']->path)
+		// 	print_r($data['query']);
+		$this->load->view('head', $data);
+		$this->load->view('/restaurant/google-map-head');
+		$this->load->view('/restaurant/browse');
 
 	}
 }

@@ -2,6 +2,21 @@ $( document ).ready(function() {
     initializers();
     restaurant_form_google_places();
     site_validators();
+
+    $('#login-form-link').click(function(e) {
+        $("#login-form").delay(100).fadeIn(100);
+        $("#register-form").fadeOut(100);
+        $('#register-form-link').removeClass('active');
+        $(this).addClass('active');
+        e.preventDefault();
+    });
+    $('#register-form-link').click(function(e) {
+        $("#register-form").delay(100).fadeIn(100);
+        $("#login-form").fadeOut(100);
+        $('#login-form-link').removeClass('active');
+        $(this).addClass('active');
+        e.preventDefault();
+    });
 });
 
 
@@ -9,6 +24,7 @@ function initializers(){
 
     $('.clockpicker1').clockpicker();
     $('.clockpicker2').clockpicker();
+    $('.short-text').shorten();
 }
 function restaurant_form_google_places(){
 
@@ -26,6 +42,8 @@ google.maps.event.addDomListener(window, 'load', function () {
                 // mesg += "\nLongitude: " + longitude;
                 // alert(mesg);
                 // console.log(place.geometry.location.lat());
+                $('#lat').val(place.geometry.location.lat());
+                $('#long').val(place.geometry.location.lng());
                 var city = getAddressComponent(place, 'locality');
                 var postal_town = getAddressComponent(place, 'postal_town');
                 var country = getAddressComponent(place, 'country');
@@ -89,12 +107,46 @@ function site_validators(){
         messages: {
             name: "Please enter some name to your restaurant.",
             body: "Please enter some content, it will be useful for users to know more about your restaurant.",
-            firstname: "Please enter Firtname.",
-            lastname: "Please enter Lastname.",
+            firstname: "Please enter First Name.",
+            lastname: "Please enter Last Name.",
             address: "Please enter your address.",
 
 
         }
+    });
+
+    $('#register-form').validate({
+        rules: {
+            username: {
+                required: true,
+                minlength: 8
+            },
+            email: {
+                required: true,
+                email: true
+            },
+            password: {
+                required: true,
+                minlength: 8
+            },
+            confirmpassword: {
+                required: true,
+                minlength: 8,
+                equalTo : "#mainpassword"
+            }
+
+        },
+        messages: {
+            username: {
+                required: "Please enter a username.",
+                minlength: "Username should be of atleast 8 characters."
+            },
+            email: {
+                required: "Please enter an email.",
+                email: "Enter a valid email."
+            }
+        }
+
     });
 
 }

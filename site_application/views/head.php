@@ -26,7 +26,7 @@
 	
 <!-- 	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD9yz_Jk6c3ir6kE8QBUKCgkl560IoCmrY&libraries=places"></script>
  -->
-     <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false&libraries=places"></script>
+     <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places"></script>
 
 	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script> -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.10.4/dist/typeahead.bundle.min.js"></script>
@@ -35,5 +35,6 @@
 	
 	
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.0/jquery.validate.js"></script>
+	<script type="text/javascript" src="<?= asset_url() ?>js/shorten.js"></script>
 	<script type="text/javascript" src="<?= asset_url() ?>js/desilogy.js"></script>
 </head>

@@ -18,18 +18,26 @@ class Example extends CI_Controller {
     }
 
     public function index() {
-        $this->aauth->create_group('user', 'Normal user');
-        $this->aauth->create_group('owner', 'Business owner');
+        // $this->aauth->create_group('user', 'Normal user');
+        // $this->aauth->create_group('owner', 'Business owner');
 
-        $this->aauth->add_member(1,4);
+        // $this->aauth->add_member(1,4);
+        // $this->aauth->logout();
 
-        if ($this->aauth->login('aa@a.com', '12345'))
-            echo 'tmm';
-        else
-            echo 'hyr';
+        // $this->aauth->create_user('asfssd@sfsdf.com', '12312424');
+
+        // if ($this->aauth->login('test3@some.com', 'adminadmin'))
+        //     echo 'tmm';
+        // else
+        //     echo 'hyr';
         //echo date("Y-m-d H:i:s");
 
-        $this->aauth->print_errors();
+        print $this->aauth->is_loggedin();
+         print_r($this->aauth->get_user());
+
+
+
+        // $this->aauth->print_errors();
     }
 
     function debug(){

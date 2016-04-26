@@ -219,7 +219,7 @@ header nav .login_btn:hover{
     position: absolute;
     text-align: center;
     top: 50%;
-    margin-top: -105px;
+    /*margin-top: -105px;*/
     z-index: 10;
 }
 

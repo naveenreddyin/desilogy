@@ -1,6 +1,17 @@
 <body>
-
     <div class="container">
+      <div class="row">
+        <?php if($this->session->flashdata('error_message')){ ?>
+          <div class="col-md-6 col-md-offset-3 alert alert-danger">
+            
+              <?php echo $this->session->flashdata('error_message'); ?>
+            
+          </div>
+        <?php } ?>
+      </div>
+    </div>
+    <div class="container">
+      
       <div class="row">
       <div class="col-md-6 col-md-offset-3">
         <div class="panel panel-login">
@@ -20,7 +31,7 @@
               <div class="col-lg-12">
                 <form id="login-form" action="login" method="post" role="form" style="display: block;">
                   <div class="form-group">
-                    <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Email" value="">
+                    <input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email" value="">
                   </div>
                   <div class="form-group">
                     <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password">

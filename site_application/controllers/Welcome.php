@@ -37,10 +37,19 @@ class Welcome extends CI_Controller {
 			$this->load->view('auth/login');
 		}
 		else{
-			die('no');
-		}
-		
+
+			$email = $_POST['email'];
+			$password = $_POST['password'];
+
+			if($this->aauth->login($email, $password)){
+					redirect('/');
+			}
+				$this->aauth->print_errors();
+    	}	
+
 	}
+		
+	
 
 	public function register()
 	{
@@ -57,12 +66,18 @@ class Welcome extends CI_Controller {
 			$role = $_POST['role'];
 
 			$user_id = $this->aauth->create_user($email, $password);
-
-			$this->aauth->add_member($user_id, $role);
+			if($user_id){
+				$this->aauth->add_member($user_id, $role);
 
 				if($this->aauth->login($email, $password)){
 					redirect('/');
 				}
+
+			}else{
+				$this->session->set_flashdata('error_message', 'Email already exists, please choose a different email, or click on forgot password link.');
+				redirect('welcome/register');
+			}
+			
 
 				// print $this->aauth->is_loggedin();
 

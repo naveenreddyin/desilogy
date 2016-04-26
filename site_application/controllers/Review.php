@@ -18,8 +18,25 @@ class Review extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
-	public function index()
+	public function create_review($rid)
 	{
-		$this->load->view('welcome_message');
+		if($_SERVER['REQUEST_METHOD'] == 'GET'){
+			$data['rid'] = $rid;
+
+			$this->load->view('head');
+			$this->load->view('review/create-review', $data);
+		}else if($_SERVER['REQUEST_METHOD'] == 'POST'){
+
+			// print_r($_REQUEST);
+
+			$this->load->model('review_model', 'review');
+
+			$inserted_id = $this->review->insert_review();
+			$this->review->insert_review_date($inserted_id);
+			$this->review->insert_votes($inserted_id);
+			$this->review->update_vote_count();
+
+			
+		}
 	}
 }

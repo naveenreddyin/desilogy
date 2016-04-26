@@ -17,6 +17,22 @@ $( document ).ready(function() {
         $(this).addClass('active');
         e.preventDefault();
     });
+
+    $('.rating').rating({
+        extendSymbol: function (rate) {
+            console.log(rate);
+            $(this).tooltip({
+              container: 'body',
+              placement: 'bottom',
+              title: 'Rate ' + rate
+            });
+          }
+    });
+
+    $('input[name="visit_date"]').daterangepicker({
+        singleDatePicker: true,
+        showDropdowns: true
+    });
 });
 
 
@@ -24,7 +40,9 @@ function initializers(){
 
     $('.clockpicker1').clockpicker();
     $('.clockpicker2').clockpicker();
-    $('.short-text').shorten();
+    $('.short-text').shorten({
+        showChars: 500,
+    });
 }
 function restaurant_form_google_places(){
 
@@ -145,6 +163,24 @@ function site_validators(){
                 required: "Please enter an email.",
                 email: "Enter a valid email."
             }
+        }
+
+    });
+
+    $('#create-review-form').validate({
+        ignore: [],
+        rules: {
+            experience: {
+                required: true,
+                minlength: 150
+            },
+            food: 'required',
+            ambience: 'required',
+            service: 'required'
+
+        },
+        messages: {
+
         }
 
     });

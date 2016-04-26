@@ -16,7 +16,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						<li><a href="#">About</a></li>
 						<li><a href="#">Contact</a></li>
 					</ul>
-					<a href="#" class="login_btn">Login</a>
+					<?php if(is_loggedin()): ?>
+						<a href="logout" class="login_btn">Logout</a>
+					<?php else: ?>
+						<a href="welcome/login" class="login_btn">Login</a>
+					<?php endif; ?>
 				</nav>
 			</div>
 		</header><!--  end header section  -->

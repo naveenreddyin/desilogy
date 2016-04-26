@@ -14,9 +14,15 @@ Logo
 			</div>
 		</div>
 		<div class="col-md-4">
+			<div class="row">
+				<div class="col-sm-8">
+					<?php echo anchor('review/create_review/'.$rid, 'Wish to write a review?', 'class="link-class"') ?>
+				</div>
+			</div>
 			<div id="map"></div>
 		</div>
 	</div>
+
 
 </body>
 </html>

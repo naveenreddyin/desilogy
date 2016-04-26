@@ -13,6 +13,9 @@
 	<!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"> -->
 	<!-- <link rel="stylesheet" type="text/css" href="http://weareoutman.github.io/clockpicker/dist/jquery-clockpicker.min.css"> -->
 	<link rel="stylesheet" type="text/css" href="<?= asset_url()?>css/bootstrap-clockpicker.min.css">
+	<link rel="stylesheet" type="text/css" href="<?= asset_url()?>css/bootstrap-rating.css">
+	<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
+
 
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
@@ -36,5 +39,10 @@
 	
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.0/jquery.validate.js"></script>
 	<script type="text/javascript" src="<?= asset_url() ?>js/shorten.js"></script>
+	<script type="text/javascript" src="<?= asset_url()?>js/tooltip.js"></script>
+	<script type="text/javascript" src="<?= asset_url()?>js/bootstrap-rating.js"></script>
+	<script type="text/javascript" src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+	<script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
 	<script type="text/javascript" src="<?= asset_url() ?>js/desilogy.js"></script>
+
 </head>

@@ -34,7 +34,7 @@
                 ->join('field_data_restaurant_name as name', 'name.rid = restaurant.rid', 'left')
                 ->join('field_data_restaurant_phone as phone', 'phone.rid = restaurant.rid', 'left')
                 ->join('field_data_restaurant_main_image as image', 'image.rid = restaurant.rid', 'left')
-                ->join('field_data_restaurant_website as website', 'website.rid = restaurant.rid', 'left')->get();
+                ->join('field_data_restaurant_website as website', 'website.rid = restaurant.rid', 'left')->where('restaurant.rid', $rid)->get();
 
                 return $query->result();
 

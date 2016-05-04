@@ -20,9 +20,18 @@
                 parent::__construct();
         }
 
-        public function get_last_ten_entries()
+        public function get_last_five_entries()
         {
-                $query = $this->db->get($this->restaurant_table_name, 10);
+                $query = $this->db->select('*')->
+                from('restaurant')
+                ->join('field_data_restaurant_address as address',
+                        'address.rid = restaurant.rid', 'left')
+                ->join('field_data_restaurant_name as name', 'name.rid = restaurant.rid', 'left')
+                ->join('field_data_restaurant_phone as phone', 'phone.rid = restaurant.rid', 'left')
+                ->join('field_data_restaurant_main_image as image', 'image.rid = restaurant.rid', 'left')
+                ->join('field_data_restaurant_website as website', 'website.rid = restaurant.rid', 'left')
+                ->limit(5)
+                ->get();
                 return $query->result();
         }
 

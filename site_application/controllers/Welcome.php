@@ -7,6 +7,8 @@ class Welcome extends CI_Controller {
         parent::__construct();
         // Your own constructor code
         $this->load->library("Aauth");
+        $this->load->model('restaurant_model', 'restaurant');
+
     }
 
 	/**
@@ -25,8 +27,9 @@ class Welcome extends CI_Controller {
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
 	public function index()
-	{	
-		$this->load->view('head');
+	{	 
+		$data['query'] = $this->restaurant->get_last_five_entries();
+		$this->load->view('head', $data);
 		$this->load->view('welcome_message');
 	}
 

@@ -2,7 +2,6 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 <body>
-<?= print_r($query); ?>
 <section class="hero">
 		<header>
 			<div class="wrapper">
@@ -38,10 +37,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<input type="text" id="search" name="search" placeholder="What are you looking for?"  autocomplete="off"/>
 				<input type="submit" id="submit_search" name="submit_search"/>
 			</form>
-			<a href="#" class="advanced_search_icon" id="advanced_search_btn"></a>
+			<!-- <a href="#" class="advanced_search_icon" id="advanced_search_btn"></a> -->
 		</div>
 
-		<div class="advanced_search">
+		<!-- <div class="advanced_search">
 			<div class="wrapper">
 				<span class="arrow"></span>
 				<form action="#" method="post">
@@ -63,7 +62,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<input type="submit" id="submit_search" name="submit_search"/>
 				</form>
 			</div>
-		</div><!--  end advanced search section  -->
+		</div> --><!--  end advanced search section  -->
 	</section><!--  end search section  -->
 
 

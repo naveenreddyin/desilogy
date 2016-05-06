@@ -220,7 +220,7 @@ header nav .login_btn:hover{
     text-align: center;
     top: 50%;
     /*margin-top: -105px;*/
-    z-index: 10;
+    /*z-index: 10;*/
 }
 
 .hero .caption h2{

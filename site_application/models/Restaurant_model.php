@@ -45,7 +45,7 @@
                 ->join('field_data_restaurant_main_image as image', 'image.rid = restaurant.rid', 'left')
                 ->join('field_data_restaurant_website as website', 'website.rid = restaurant.rid', 'left')->where('restaurant.rid', $rid)->get();
 
-                return $query->result();
+                return $query->row();
 
         }
 

@@ -22,6 +22,9 @@ class Review extends CI_Controller {
 	{
 		if($_SERVER['REQUEST_METHOD'] == 'GET'){
 			$data['rid'] = $rid;
+			
+			$this->load->model('restaurant_model', 'restaurant');
+			$data['query'] = $this->restaurant->get_restaurant_details($rid);
 
 			$this->load->view('head');
 			$this->load->view('review/create-review', $data);

@@ -1,7 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
-
 	<body>
 		<div class="container">
 			<div class="container-fluid">
@@ -9,6 +8,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			   <div class="col-md-6 col-sm-6 col-xs-12">
 			    <form id="create-review-form" method="post">
 			    	<input type="hidden" value="<?= $rid; ?>" name="review_ref"/>
+			    	<input type="hidden" value="<?= $query->city; ?>" name="city" />
+			    	<input type="hidden" value="<?= $query->country; ?>" name="country" />
 				     <div class="form-group ">
 				      <label class="control-label requiredField" for="textarea">
 				       Write your experience

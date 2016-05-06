@@ -2,7 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 <body>
-<?= print_r($query); ?>
+
 <section class="hero">
 		<header>
 			<div class="wrapper">

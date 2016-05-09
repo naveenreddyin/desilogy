@@ -10,6 +10,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			    	<input type="hidden" value="<?= $rid; ?>" name="review_ref"/>
 			    	<input type="hidden" value="<?= $query->city; ?>" name="city" />
 			    	<input type="hidden" value="<?= $query->country; ?>" name="country" />
+			    	<div class="form-group ">
+				      <label class="control-label requiredField" for="textarea">
+				       Please provide a title for your review
+				       <span class="asteriskField">
+				        *
+				       </span>
+				      </label>
+				      <input class="form-control" id="title" name="title"/>
+				     </div>
 				     <div class="form-group ">
 				      <label class="control-label requiredField" for="textarea">
 				       Write your experience
@@ -48,8 +57,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				     </div>
 				     
 				     <div class="form-group">
-				     	<label class="control-label requiredField" for="service">
-				       		Service
+				     	<label class="control-label requiredField" for="visit_date">
+				       		Date of visit
 				       		<span class="asteriskField">
 				        		*
 				       		</span>

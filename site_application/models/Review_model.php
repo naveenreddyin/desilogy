@@ -11,9 +11,11 @@
         {
         	$review_rid = $_POST['review_ref'];
         	$experience = $_POST['experience'];
+            $title = $_POST['title'];
 
             $data = array(
             	'rid' => $review_rid,
+                'title' => $title,
             	'body' => $experience,
             	'created' => time()
             	);

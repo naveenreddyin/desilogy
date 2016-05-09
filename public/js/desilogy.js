@@ -208,6 +208,7 @@ function site_validators(){
     $('#create-review-form').validate({
         ignore: [],
         rules: {
+            'title': 'required',
             experience: {
                 required: true,
                 minlength: 150

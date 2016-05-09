@@ -2,6 +2,7 @@ $( document ).ready(function() {
     initializers();
     restaurant_form_google_places();
     site_validators();
+    frontpage_google_places();
 
     $('#login-form-link').click(function(e) {
         $("#login-form").delay(100).fadeIn(100);
@@ -44,6 +45,43 @@ function initializers(){
         showChars: 500,
     });
 }
+
+function frontpage_google_places(){
+
+    // For address box on restaurant page.
+google.maps.event.addDomListener(window, 'load', function () {
+            var places = new google.maps.places.Autocomplete(document.getElementById('frontpage-google-places'), {types: ['(cities)']});
+            google.maps.event.addListener(places, 'place_changed', function () {
+                var place = places.getPlace();
+                console.log(place);
+                // var address = place.formatted_address;
+                // var latitude = place.geometry.location.A;
+                // var longitude = place.geometry.location.F;
+                // var mesg = "Address: " + address;
+                // mesg += "\nLatitude: " + latitude;
+                // mesg += "\nLongitude: " + longitude;
+                // alert(mesg);
+                // console.log(place.geometry.location.lat());
+                
+                var city = getAddressComponent(place, 'locality');
+                var country = getAddressComponent(place, 'country');
+                // console.log(postal_code);
+                // console.log(getAddressComponent(place, 'locality'));
+                // console.log(getAddressComponent(place, 'country'));
+
+                if(city == '')
+                    $('#frontpage_city').val(postal_town);
+                else
+                    $('#frontpage_city').val(city);
+
+                $('#frontpage_country').val(country);
+                
+
+            });
+});
+
+}
+
 function restaurant_form_google_places(){
 
 // For address box on restaurant page.

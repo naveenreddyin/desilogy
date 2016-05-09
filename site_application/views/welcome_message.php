@@ -33,8 +33,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 	<section class="search">
 		<div class="wrapper">
-			<form action="#" method="post">
-				<input type="text" id="search" name="search" placeholder="What are you looking for?"  autocomplete="off"/>
+			<form action="panel/restaurant" method="get">
+				<input type="text" id="frontpage-google-places" name="search" placeholder="What are you looking for?"  autocomplete="off"/>
+				<input type="hidden" name="city" value="" id="frontpage_city"></input>
+				<input type="hidden" name="country" value="" id="frontpage_country"></input>
 				<input type="submit" id="submit_search" name="submit_search"/>
 			</form>
 			<!-- <a href="#" class="advanced_search_icon" id="advanced_search_btn"></a> -->

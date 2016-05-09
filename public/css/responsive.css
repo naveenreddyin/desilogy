@@ -258,7 +258,7 @@ header nav .login_btn:hover{
     position: relative;
 }
 
-.search #search{
+.search #frontpage-google-places{
     display: block;
     width: 90.90909090909091%;
     height: 100px;
@@ -276,19 +276,19 @@ header nav .login_btn:hover{
     line-height: 22px;
 }
 
-.search #search::-webkit-input-placeholder{
+.search #frontpage-google-places::-webkit-input-placeholder{
    color: #FFFFFF;
 }
 
-.search #search:-moz-placeholder{ 
+.search #frontpage-google-places:-moz-placeholder{ 
    color: #FFFFFF;  
 }
 
-.search #search::-moz-placeholder{ 
+.search #frontpage-google-places::-moz-placeholder{ 
    color: #FFFFFF;  
 }
 
-.search #search:-ms-input-placeholder{  
+.search #frontpage-google-places:-ms-input-placeholder{  
    color: #FFFFFF;  
 } 
 
@@ -936,7 +936,7 @@ footer .copyrights a.ph_link{
         font-size: 16px;
     }
 
-    .search #search{
+    .search #frontpage-google-places{
         width: 83%;
     }
 

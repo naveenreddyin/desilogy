@@ -23,6 +23,13 @@
             return $this->db->insert_id();
         }
 
+        public function get_reviews($rid, $limit){
+
+            $query = $this->db->get_where($this->review_table,  array('rid' => $rid), $limit);
+
+            return $query->result();
+        }
+
         public function update_vote_count(){
         	$rid = $_POST['review_ref'];
 

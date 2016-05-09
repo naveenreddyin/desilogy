@@ -4,6 +4,127 @@
 }
 
 
+.custom-navbar-container-fluid{
+
+	background-color: #f0ad4e;
+}
+
+.panel-restaurant-rating-ok-sign{
+	font-size: 1em;
+	color: #f0ad4e;
+}
+
+.text-center , .main-area-panel-restaurant{
+  padding-top: 20px;
+}
+.col-xs-12 {
+  background-color: #fff;
+}
+#sidebar {
+  height: 100%;
+  padding-right: 0;
+  padding-top: 20px;
+
+}
+#sidebar .nav {
+  width: 95%;
+  border: 2px #ff8533 solid;
+  border-radius: 10px;
+}
+#sidebar li {
+  border:0 #f2f2f2 solid;
+  border-bottom-width:1px;
+}
+
+.thumbnail
+{
+    margin-bottom: 20px;
+    padding: 0px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+}
+
+.item.list-group-item
+{
+    float: none;
+    width: 100%;
+    background-color: #fff;
+    margin-bottom: 10px;
+}
+.item.list-group-item:nth-of-type(odd):hover,.item.list-group-item:hover
+{
+    background: #f0ad4e;
+}
+
+.item.list-group-item .list-group-image
+{
+    margin-right: 10px;
+}
+.item.list-group-item .thumbnail
+{
+    margin-bottom: 0px;
+}
+.item.list-group-item .caption
+{
+    padding: 9px 9px 0px 9px;
+}
+.item.list-group-item:nth-of-type(odd)
+{
+    background: #eeeeee;
+}
+
+.item.list-group-item:before, .item.list-group-item:after
+{
+    display: table;
+    content: " ";
+}
+
+.item.list-group-item img
+{
+    float: left;
+}
+.item.list-group-item:after
+{
+    clear: both;
+}
+.list-group-item-text
+{
+    margin: 0 0 11px;
+}
+
+/* collapsed sidebar styles */
+@media screen and (max-width: 767px) {
+	  .row-offcanvas {
+	    position: relative;
+	    -webkit-transition: all 0.25s ease-out;
+	    -moz-transition: all 0.25s ease-out;
+	    transition: all 0.25s ease-out;
+	  }
+	  .row-offcanvas-right
+	  .sidebar-offcanvas {
+	    right: -41.6%;
+	  }
+
+	  .row-offcanvas-left
+	  .sidebar-offcanvas {
+	    left: -41.6%;
+	  }
+	  .row-offcanvas-right.active {
+	    right: 41.6%;
+	  }
+	  .row-offcanvas-left.active {
+	    left: 41.6%;
+	  }
+	  .sidebar-offcanvas {
+	    position: absolute;
+	    top: 0;
+	    width: 41.6%;
+	  }
+	  #sidebar {
+	    padding-top:0;
+	  }
+  }
 
 .panel-login, .panel{
 	border-color: #ccc !important;

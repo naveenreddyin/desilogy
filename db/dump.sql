@@ -281,7 +281,7 @@ CREATE TABLE `field_data_restaurant_address` (
 
 LOCK TABLES `field_data_restaurant_address` WRITE;
 /*!40000 ALTER TABLE `field_data_restaurant_address` DISABLE KEYS */;
-INSERT INTO `field_data_restaurant_address` VALUES (1,'Oslo','Norway','0184','Stenersgata','Wärtsilä Norway AS, Stenersgata, Oslo, Norway',59.913006200000,10.751490800000),(2,'Oslo','Norway','0186','Christian Krohgs gate','Christian Krohgs gate 16, Oslo, Norway',59.914981000000,10.758839700000),(3,'Bristol','United Kingdom','','','Bristol, United Kingdom',51.454513000000,-2.587910000000);
+INSERT INTO `field_data_restaurant_address` VALUES (1,'Oslo','Norway','0184','Stenersgata','Wärtsilä Norway AS, Stenersgata, Oslo, Norway',59.913006200000,10.751490800000),(2,'Oslo','Norway','0186','Christian Krohgs gate','Christian Krohgs gate 16, Oslo, Norway',59.914981000000,10.758839700000),(3,'Bristol','United Kingdom','','','Bristol, United Kingdom',51.454513000000,-2.587910000000),(4,'Oslo','Norway','0186','Tollbugata','Tollbugata, Oslo, Norway',59.910428500000,10.744264200000);
 /*!40000 ALTER TABLE `field_data_restaurant_address` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -336,7 +336,7 @@ CREATE TABLE `field_data_restaurant_name` (
 
 LOCK TABLES `field_data_restaurant_name` WRITE;
 /*!40000 ALTER TABLE `field_data_restaurant_name` DISABLE KEYS */;
-INSERT INTO `field_data_restaurant_name` VALUES (1,'first name','last name'),(2,'sfsdfds','sgsdgds'),(3,'first name','last name');
+INSERT INTO `field_data_restaurant_name` VALUES (1,'first name','last name'),(2,'sfsdfds','sgsdgds'),(3,'first name','last name'),(4,'sdfsd','sdfsdf');
 /*!40000 ALTER TABLE `field_data_restaurant_name` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -362,7 +362,7 @@ CREATE TABLE `field_data_restaurant_phone` (
 
 LOCK TABLES `field_data_restaurant_phone` WRITE;
 /*!40000 ALTER TABLE `field_data_restaurant_phone` DISABLE KEYS */;
-INSERT INTO `field_data_restaurant_phone` VALUES (1,'2343242'),(2,'2343242'),(3,'');
+INSERT INTO `field_data_restaurant_phone` VALUES (1,'2343242'),(2,'2343242'),(3,''),(4,'2343242');
 /*!40000 ALTER TABLE `field_data_restaurant_phone` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -388,7 +388,7 @@ CREATE TABLE `field_data_restaurant_website` (
 
 LOCK TABLES `field_data_restaurant_website` WRITE;
 /*!40000 ALTER TABLE `field_data_restaurant_website` DISABLE KEYS */;
-INSERT INTO `field_data_restaurant_website` VALUES (1,''),(2,''),(3,'');
+INSERT INTO `field_data_restaurant_website` VALUES (1,''),(2,''),(3,''),(4,'');
 /*!40000 ALTER TABLE `field_data_restaurant_website` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -487,6 +487,22 @@ SET character_set_client = utf8;
 SET character_set_client = @saved_cs_client;
 
 --
+-- Temporary view structure for view `ratings2`
+--
+
+DROP TABLE IF EXISTS `ratings2`;
+/*!50001 DROP VIEW IF EXISTS `ratings2`*/;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+/*!50001 CREATE VIEW `ratings2` AS SELECT 
+ 1 AS `rid`,
+ 1 AS `avg_num_votes`,
+ 1 AS `avg_rating`,
+ 1 AS `this_num_votes`,
+ 1 AS `this_rating`*/;
+SET character_set_client = @saved_cs_client;
+
+--
 -- Table structure for table `restaurant`
 --
 
@@ -501,7 +517,7 @@ CREATE TABLE `restaurant` (
   `status` int(11) NOT NULL DEFAULT '0',
   `updated` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`rid`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -510,7 +526,7 @@ CREATE TABLE `restaurant` (
 
 LOCK TABLES `restaurant` WRITE;
 /*!40000 ALTER TABLE `restaurant` DISABLE KEYS */;
-INSERT INTO `restaurant` VALUES (1,'something 1','Lorem ipsum dolor sit amet, no graeco deleniti quo, tincidunt signiferumque in eum, eu vel choro delicatissimi. In everti labores complectitur vel. Has eu vidit everti. Te ius hinc animal deserunt. Sit ne commodo partiendo consulatu, oratio ocurreret ea vim, iuvaret postulant usu ei. Altera propriae et eam, inermis adipisci indoctum ex eum. Probo dicunt impedit eum cu.\n\nDicat blandit insolens in vel, sit appetere gloriatur et, no commune legendos nam. Qui ut stet nominati gloriatur, intellegam scripserit has ea, eum accusam moderatius liberavisse in. An possim commune mel, paulo putent alienum vis an. Ius detracto delectus persequeris at, ad alterum prodesset sea. Corpora eleifend scriptorem eu sed, cu per partem deserunt. Quis vivendo consectetuer eum no.\n\nDolor labitur sea cu, liber diceret nonumes ius in, id tritani explicari dissentiunt duo. Id vim ornatus volumus. Ius paulo reformidans no, putant vituperata voluptatibus sit ne, has id aliquid maiorum constituam. Ei probatus suscipiantur sea, mei ut appetere liberavisse.\n\nProbo lobortis nam an, no omnes doctus aliquid mei, an cum melius cetero. Verear albucius adipisci nec eu, soleat verear principes mei ne. Sit ut amet repudiandae, meis probo cum in. Harum euripidis an sea. Agam dicit mnesarchum mea ne, ei eum errem oratio tamquam. No per quod illud repudiare, id scaevola consequat quaerendum ius.\n\nOmnium malorum temporibus usu cu. Duo id dicunt posidonium. Accommodare interpretaris quo in. Nam nullam euripidis at, vis at idque essent dolorum, te duo tempor altera. Deseruisse comprehensam nam an.',1461060354,0,0),(2,'something 2','lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum',1461697501,0,0),(3,'something 3','lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum',1461698020,0,0);
+INSERT INTO `restaurant` VALUES (1,'something 1','Lorem ipsum dolor sit amet, no graeco deleniti quo, tincidunt signiferumque in eum, eu vel choro delicatissimi. In everti labores complectitur vel. Has eu vidit everti. Te ius hinc animal deserunt. Sit ne commodo partiendo consulatu, oratio ocurreret ea vim, iuvaret postulant usu ei. Altera propriae et eam, inermis adipisci indoctum ex eum. Probo dicunt impedit eum cu.\n\nDicat blandit insolens in vel, sit appetere gloriatur et, no commune legendos nam. Qui ut stet nominati gloriatur, intellegam scripserit has ea, eum accusam moderatius liberavisse in. An possim commune mel, paulo putent alienum vis an. Ius detracto delectus persequeris at, ad alterum prodesset sea. Corpora eleifend scriptorem eu sed, cu per partem deserunt. Quis vivendo consectetuer eum no.\n\nDolor labitur sea cu, liber diceret nonumes ius in, id tritani explicari dissentiunt duo. Id vim ornatus volumus. Ius paulo reformidans no, putant vituperata voluptatibus sit ne, has id aliquid maiorum constituam. Ei probatus suscipiantur sea, mei ut appetere liberavisse.\n\nProbo lobortis nam an, no omnes doctus aliquid mei, an cum melius cetero. Verear albucius adipisci nec eu, soleat verear principes mei ne. Sit ut amet repudiandae, meis probo cum in. Harum euripidis an sea. Agam dicit mnesarchum mea ne, ei eum errem oratio tamquam. No per quod illud repudiare, id scaevola consequat quaerendum ius.\n\nOmnium malorum temporibus usu cu. Duo id dicunt posidonium. Accommodare interpretaris quo in. Nam nullam euripidis at, vis at idque essent dolorum, te duo tempor altera. Deseruisse comprehensam nam an.',1461060354,0,0),(2,'something 2','lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum',1461697501,0,0),(3,'something 3','lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum',1461698020,0,0),(4,'something 4','this_num_votessdfsdgdsgsd gs gs gfsh fh dfh this_num_votessdfsdgdsgsd gs gs gfsh fh dfh this_num_votessdfsdgdsgsd gs gs gfsh fh dfh this_num_votessdfsdgdsgsd gs gs gfsh fh dfh this_num_votessdfsdgdsgsd gs gs gfsh fh dfh this_num_votessdfsdgdsgsd gs gs gfsh fh dfh this_num_votessdfsdgdsgsd gs gs gfsh fh dfh this_num_votessdfsdgdsgsd gs gs gfsh fh dfh this_num_votessdfsdgdsgsd gs gs gfsh fh dfh this_num_votessdfsdgdsgsd gs gs gfsh fh dfh this_num_votessdfsdgdsgsd gs gs gfsh fh dfh this_num_votessdfsdgdsgsd gs gs gfsh fh dfh this_num_votessdfsdgdsgsd gs gs gfsh fh dfh this_num_votessdfsdgdsgsd gs gs gfsh fh dfh this_num_votessdfsdgdsgsd gs gs gfsh fh dfh this_num_votessdfsdgdsgsd gs gs gfsh fh dfh this_num_votessdfsdgdsgsd gs gs gfsh fh dfh this_num_votessdfsdgdsgsd gs gs gfsh fh dfh this_num_votessdfsdgdsgsd gs gs gfsh fh dfh this_num_votessdfsdgdsgsd gs gs gfsh fh dfh this_num_votessdfsdgdsgsd gs gs gfsh fh dfh this_num_votessdfsdgdsgsd gs gs gfsh fh dfh this_num_votessdfsdgdsgsd gs gs gfsh fh dfh this_num_votessdfsdgdsgsd gs gs gfsh fh dfh this_num_votessdfsdgdsgsd gs gs gfsh fh dfh this_num_votessdfsdgdsgsd gs gs gfsh fh dfh this_num_votessdfsdgdsgsd gs gs gfsh fh dfh this_num_votessdfsdgdsgsd gs gs gfsh fh dfh this_num_votessdfsdgdsgsd gs gs gfsh fh dfh this_num_votessdfsdgdsgsd gs gs gfsh fh dfh this_num_votessdfsdgdsgsd gs gs gfsh fh dfh this_num_votessdfsdgdsgsd gs gs gfsh fh dfh this_num_votessdfsdgdsgsd gs gs gfsh fh dfh this_num_votessdfsdgdsgsd gs gs gfsh fh dfh this_num_votessdfsdgdsgsd gs gs gfsh fh dfh this_num_votessdfsdgdsgsd gs gs gfsh fh dfh ',1462713658,0,0);
 /*!40000 ALTER TABLE `restaurant` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -587,6 +603,24 @@ UNLOCK TABLES;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
 /*!50001 SET collation_connection      = @saved_col_connection */;
+
+--
+-- Final view structure for view `ratings2`
+--
+
+/*!50001 DROP VIEW IF EXISTS `ratings2`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8 */;
+/*!50001 SET character_set_results     = utf8 */;
+/*!50001 SET collation_connection      = utf8_general_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `ratings2` AS select `field_data_review_votes`.`rid` AS `rid`,((select count(`field_data_review_votes`.`rid`) from `field_data_review_votes`) / (select count(distinct `field_data_review_votes`.`rid`) from `field_data_review_votes`)) AS `avg_num_votes`,(select avg(`field_data_review_votes`.`overall`) from `field_data_review_votes`) AS `avg_rating`,count(`field_data_review_votes`.`rid`) AS `this_num_votes`,avg(`field_data_review_votes`.`overall`) AS `this_rating` from (`field_data_review_votes` left join `field_data_restaurant_address` on((`field_data_restaurant_address`.`rid` = `field_data_review_votes`.`rid`))) where (`field_data_restaurant_address`.`city` = 'Oslo') group by `field_data_review_votes`.`rid` */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -597,4 +631,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-05-04  7:02:41
+-- Dump completed on 2016-05-09  6:59:39

@@ -95,7 +95,7 @@ class Restaurant extends Restaurant_Controller {
 
 	public function browse($rid){
 		$this->load->model('restaurant_model', 'restaurant');
-		$data['query'] = $this->restaurant->get_restaurant_details($rid)[0];
+		$data['query'] = $this->restaurant->get_restaurant_details($rid);
 		$data['rid'] = $rid;
 		// if($data['query']->path)
 		// 	print_r($data['query']);

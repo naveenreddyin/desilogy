@@ -128,5 +128,32 @@
                 $this->db->update($this->restaurant_table_name, $this, array('rid' => $_POST['id']));
         }
 
+        public function get_restaurant_by_bayesian_ranking(){
+
+            $city = $_GET['city'];
+            $country = $_GET['country'];
+            $this->db->query('SET SQL_BIG_SELECTS=1'); 
+            
+            $city = $this->db->escape($city);
+            $sql_query = "select rid,number_of_restaurants,number_of_reviews,((avg_num_votes * avg_rating) + (this_num_votes * this_rating)) / (avg_num_votes + this_num_votes) as real_rating
+from (select `field_data_review_votes`.`rid`
+AS `rid`,
+(select count(rvid) from desilogy.review where desilogy.review.rid = `field_data_review_votes`.`rid`) as number_of_reviews,
+(select count(rid) FROM desilogy.field_data_restaurant_address where city = ".$city.") as number_of_restaurants,((select count(`field_data_review_votes`.`rid`) 
+from `field_data_review_votes`) / (select count(distinct `field_data_review_votes`.`rid`) 
+from `field_data_review_votes`)) AS `avg_num_votes`,
+(select avg(`field_data_review_votes`.`overall`) from `field_data_review_votes`) 
+AS `avg_rating`,count(`field_data_review_votes`.`rid`) AS 
+`this_num_votes`,avg(`field_data_review_votes`.`overall`) AS 
+`this_rating` from `field_data_review_votes` left join field_data_restaurant_address ON 
+field_data_restaurant_address.rid = `field_data_review_votes`.`rid` where `field_data_restaurant_address`.`city` = ".$city."
+group by `field_data_review_votes`.`rid`
+) as subquery order by real_rating desc";
+
+            $query = $this->db->query($sql_query);
+            // print_r($query->result());
+            return $query->result();
+        }
+
 }
 ?>

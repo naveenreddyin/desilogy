@@ -11,7 +11,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			    	<input type="hidden" value="<?= $query->city; ?>" name="city" />
 			    	<input type="hidden" value="<?= $query->country; ?>" name="country" />
 			    	<div class="form-group ">
-				      <label class="control-label requiredField" for="textarea">
+				      <label class="control-label requiredField" for="text">
 				       Please provide a title for your review
 				       <span class="asteriskField">
 				        *

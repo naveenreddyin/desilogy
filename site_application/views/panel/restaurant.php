@@ -91,20 +91,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		                	<h6>#<?= $i; ?> out of <?= $item->number_of_restaurants; ?> restaurants in <?= $city; ?></h6>
 
 		                	<input class="rating" type="hidden" data-filled="glyphicon glyphicon glyphicon-ok-sign panel-restaurant-rating-ok-sign" data-empty="glyphicon glyphicon glyphicon-ok-circle panel-restaurant-rating-ok-sign" data-readonly data-fractions="2" value="<?= round($item->real_rating); ?>"/> <?= $item->number_of_reviews; ?> reviews
-		                    <p class="group inner list-group-item-text short-text">
-		                        <?= $details->body; ?></p>
-		                    <div class="row">
-		                        <div class="col-xs-12 col-md-6">
+		                   
 		                        	<?php
 		                        	$reviews = get_restaurant_reviews($item->rid, 2);
 		                        	// print_r($reviews);
+		                        	foreach ($reviews as $review):
 		                        	?>
-		                            <p class="lead">
-		                                $21.000</p>
-		                        </div>
+		                        	 <p class="group inner list-group-item-text short-text"><a href="#">"<?= $review->title; ?>"</a></p>
+		                        	<?php endforeach ?>
+		                    <div class="row">
 		                        <div class="col-xs-12 col-md-6">
-		                            <a class="btn btn-success" href="http://www.jquery2dotnet.com">Add to cart</a>
+
+		                           <!--  <p class="lead">
+		                                $21.000</p> -->
 		                        </div>
+		                        <!-- <div class="col-xs-12 col-md-6">
+		                            <a class="btn btn-success" href="http://www.jquery2dotnet.com">Add to cart</a>
+		                        </div> -->
 		                    </div>
 		                </div>
 		            </div>

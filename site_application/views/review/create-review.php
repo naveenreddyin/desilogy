@@ -6,7 +6,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<div class="container-fluid">
 			  <div class="row">
 			   <div class="col-md-6 col-sm-6 col-xs-12">
-			    <form id="create-review-form" method="post">
+			    <form id="create-review-form" method="post" action="../create_review_test" enctype="multipart/form-data">
 			    	<input type="hidden" value="<?= $rid; ?>" name="review_ref"/>
 			    	<input type="hidden" value="<?= $query->city; ?>" name="city" />
 			    	<input type="hidden" value="<?= $query->country; ?>" name="country" />
@@ -65,9 +65,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				      	</label>
 				    	<input type="text" name="visit_date" placeholder="MM/DD/YY" value="" />
 				     </div>
- 
+ 					
+ 					 <div class="form-group">
+				     	<label class="control-label" for="images">
+				       		Provide images (if you have any) <a id="add-more-images" href="#">+</a>
+				      	</label>
+				    	<input type="file" name="images[]"/>
+				     </div>
 
-    
+    			
 				     <div class="form-group">
 				      <div>
 				       <button class="btn btn-primary " name="submit" type="submit">

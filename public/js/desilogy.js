@@ -34,6 +34,8 @@ $( document ).ready(function() {
         singleDatePicker: true,
         showDropdowns: true
     });
+
+    add_more_images();
 });
 
 
@@ -43,6 +45,14 @@ function initializers(){
     $('.clockpicker2').clockpicker();
     $('.short-text').shorten({
         showChars: 500,
+    });
+}
+
+function add_more_images(){
+
+    $('#add-more-images').on('click', function(){
+        console.log($(this).parent().next());
+        $(this).parent().next('input').after("<input type='file' name='images[]'/>");
     });
 }
 

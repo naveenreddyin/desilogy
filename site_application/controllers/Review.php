@@ -42,4 +42,16 @@ class Review extends CI_Controller {
 			
 		}
 	}
+
+	public function create_review_test(){
+		// print_r($_FILES);
+		$count = count($_FILES['images']['name']);
+
+		for($i = 0; $i < $count; $i++){
+			if($_FILES['images']['name'][$i])
+				echo $_FILES['images']['name'][$i];
+			// else
+			// 	echo 'no';
+		}
+	}
 }

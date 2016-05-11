@@ -39,7 +39,48 @@ class Review extends CI_Controller {
 			$this->review->insert_votes($inserted_id);
 			$this->review->update_vote_count();
 
+			// start for uploading if any files are uploaded.
+
+			$upload_path = realpath(APPPATH . '../public/uploads');
+
+			$config['upload_path'] = $upload_path;
+			$config['allowed_types'] = 'gif|jpg|png';
+			$config['max_size']	= '500';
+			$config['max_width']  = '1024';
+			$config['max_height']  = '768';
+			$config['overwrite'] = FALSE;
+
+			$this->load->library('upload', $config);
 			
+			$files = $_FILES;
+
+			$count = count($_FILES['images']['name']);
+			$path = "";
+
+			for($i = 0; $i < $count; $i++){
+				if($files['images']['name'][$i])
+				{
+					$_FILES['images']['name']= $files['images']['name'][$i];
+					// echo $_FILES['images']['name'].'</br>';
+			        $_FILES['images']['type']= $files['images']['type'][$i];
+			        $_FILES['images']['tmp_name']= $files['images']['tmp_name'][$i];
+			        $_FILES['images']['error']= $files['images']['error'][$i];
+			        $_FILES['images']['size']= $files['images']['size'][$i];
+
+			        $this->upload->initialize($config);
+
+			        $this->upload->do_upload('images');
+
+			        echo $this->upload->display_errors();
+			        $data = $this->upload->data();
+			        $path .= $data['full_path'].";";
+			        print_r($data);
+			        // print_r($data['full_path']);
+				}
+			}
+			$this->review->insert_review_images($inserted_id, $path);
+
+			redirect('restaurant/browse/'.$_POST['review_ref'], 'refresh');
 		}
 	}
 
@@ -59,7 +100,11 @@ class Review extends CI_Controller {
 
 		// print_r($_FILES);
 		$count = count($_FILES['images']['name']);
+		// if ($_FILES)
+		// 	print "count: ".$count;
 		$data_arr = array();
+
+		$path = "";
 
 		for($i = 0; $i < $count; $i++){
 			if($files['images']['name'][$i])
@@ -77,14 +122,16 @@ class Review extends CI_Controller {
 
 		        echo $this->upload->display_errors();
 		        $data = $this->upload->data();
-		       $data_arr['path'] = $data['full_path'];
-
+		       $path .= $data['full_path'].";";
+		       print_r($data);
 		        // print_r($data['full_path']);
 			}
 
-			print_r($data_arr);
+			
 			// else
 			// 	echo 'no';
 		}
+		echo $path;
+		// print_r($data_arr);
 	}
 }

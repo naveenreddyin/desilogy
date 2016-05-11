@@ -5,6 +5,7 @@
 		public $review_date = 'field_data_review_date';
 		public $review_votes = 'field_data_review_votes';
 		public $votes_count = 'field_review_vote_count';
+        public $review_images = 'field_review_images';
 
 
 		public function insert_review()
@@ -83,6 +84,14 @@
 				);
 
 			$this->db->insert($this->review_votes, $data);
+
+        }
+
+        public function insert_review_images($rvid, $path){
+
+            $data = array('rvid' =>  $rvid, 'path' => $path );
+
+            $this->db->insert($this->review_images, $data);
 
         }
 

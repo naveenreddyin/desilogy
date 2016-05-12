@@ -33,6 +33,18 @@
             return $query->result();
         }
 
+        public function get_reviews_all_data($rid, $limit){
+
+            $query = $this->db->select('*')->
+                from('review')
+            ->join('field_data_review_votes as votes','votes.rvid = review.rvid', 'left')
+            ->where('review.rid', $rid, $limit)->order_by("votes.overall", "desc")->get();
+
+            return $query->result();
+        }
+
+
+
         public function update_vote_count(){
         	$rid = $_POST['review_ref'];
 

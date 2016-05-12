@@ -19,4 +19,13 @@ function get_restaurant_reviews($rid, $limit){
 	return $reviews;
 }
 
+function get_restaurant_reviews_all_data($rid, $limit){
+	$ci =& get_instance();
+	$ci->load->model('review_model', 'review');
+
+	$reviews = $ci->review->get_reviews_all_data($rid, $limit);
+
+	return $reviews;
+}
+
 ?>

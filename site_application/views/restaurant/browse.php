@@ -34,7 +34,8 @@ Logo
 		<div class="col-md-8">
 			<section id="reviews">
 				<?php
-					$reviews = get_restaurant_reviews($rid, 20);
+					$reviews = get_restaurant_reviews_all_data($rid, 20);
+					// var_dump($reviews);
 					foreach($reviews as $review):
 				?>
 
@@ -47,7 +48,35 @@ Logo
 	    							<div class="col-sm-2">
 	    								<img src="<?= asset_url() ?>img/user-default.png">
 	    							</div>
-	    							<div class="col-sm-4">
+	    							<div class="col-sm-10">
+	    								<div class="row">
+	    									<div class="col-sm-2">
+	    										<label>Overall</label>
+	    										<br/>
+	    										<input class="rating" type="hidden" data-filled="glyphicon glyphicon glyphicon-ok-sign panel-restaurant-rating-ok-sign" data-empty="glyphicon glyphicon glyphicon-ok-circle panel-restaurant-rating-ok-sign" data-readonly data-fractions="2" value="<?= round($review->overall); ?>"/>
+	    									</div>
+	    									<div class="col-sm-2">
+	    										<label>Food</label>
+	    										<br/>
+	    										<input class="rating" type="hidden" data-filled="glyphicon glyphicon glyphicon-ok-sign panel-restaurant-rating-ok-sign" data-empty="glyphicon glyphicon glyphicon-ok-circle panel-restaurant-rating-ok-sign" data-readonly data-fractions="2" value="<?= round($review->food); ?>"/>
+	    									</div>
+	    									<div class="col-sm-2">
+	    										<label>Ambience</label>
+	    										<br/>
+	    										<input class="rating" type="hidden" data-filled="glyphicon glyphicon glyphicon-ok-sign panel-restaurant-rating-ok-sign" data-empty="glyphicon glyphicon glyphicon-ok-circle panel-restaurant-rating-ok-sign" data-readonly data-fractions="2" value="<?= round($review->ambience); ?>"/>
+	    									</div>
+	    									<div class="col-sm-2">
+	    										<label>Service</label>
+	    										<br/>
+	    										<input class="rating" type="hidden" data-filled="glyphicon glyphicon glyphicon-ok-sign panel-restaurant-rating-ok-sign" data-empty="glyphicon glyphicon glyphicon-ok-circle panel-restaurant-rating-ok-sign" data-readonly data-fractions="2" value="<?= round($review->service); ?>"/>
+	    									</div>
+	    								</div>
+	    								<div class="row">
+	    									<div class="col-sm-8">
+	    										<span class="short-text"><?= $review->body; ?></span>
+	    									</div>
+	    								</div>
+	    								
 	    							</div>
 	    						</div>
 	  						</div>

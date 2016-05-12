@@ -27,7 +27,7 @@
 
 }
 
-.nav-pills-browse > li.active{
+.nav-pills-browse .active a{
 	background-color: #f0ad4e !important;
 }
 

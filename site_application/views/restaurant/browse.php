@@ -43,7 +43,13 @@ Logo
 	    						<h3 class="panel-title"><?= $review->title; ?></h3>
 	  						</div>
 							<div class="panel-body">
-	    						Panel content
+	    						<div class="row">
+	    							<div class="col-sm-2">
+	    								<img src="<?= asset_url() ?>img/user-default.png">
+	    							</div>
+	    							<div class="col-sm-4">
+	    							</div>
+	    						</div>
 	  						</div>
 						</div>
 				<?php

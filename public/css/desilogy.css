@@ -26,6 +26,21 @@
   padding-top: 20px;
 
 }
+
+.nav-pills-browse > li.active{
+	background-color: #f0ad4e !important;
+}
+
+.write-review-button > a{
+	color: #fff;
+}
+
+#reviews{
+	position: relative;
+}
+.write-review-button{
+	margin-bottom: 20px !important;
+}
 #sidebar .nav {
   width: 95%;
   border: 2px #ff8533 solid;

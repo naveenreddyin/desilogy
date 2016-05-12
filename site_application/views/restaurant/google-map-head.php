@@ -23,5 +23,5 @@
       google.maps.event.addDomListener(window, 'load', init_map);
 </script>
 <style>
-      #map { height: 300px }
+      #map { height: 80px; }
     </style>

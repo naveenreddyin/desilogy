@@ -9,11 +9,11 @@ Logo
 	<h1><?= $query->name; ?></h1>
 	<div class="row">
 		<div class="col-md-8">
-		<ul class="nav nav-pills">
-  <li role="presentation" class="active"><a href="#">Home</a></li>
-  <li role="presentation"><a href="#">Profile</a></li>
-  <li role="presentation"><a href="#">Messages</a></li>
-</ul>
+		<ul class="nav nav-pills nav-pills-browse">
+		  <li role="presentation" class="active"><a href="#">Home</a></li>
+		  <li role="presentation"><a href="#reviews">Reviews</a></li>
+		  <li role="presentation"><a href="#show-map">Map</a></li>
+		</ul>
 			<div class="short-text">
 				<?= $query->body; ?>
 			</div>
@@ -21,10 +21,35 @@ Logo
 		<div class="col-md-4">
 			<div class="row">
 				<div class="col-sm-8">
-					<?php echo anchor('review/create_review/'.$rid, 'Wish to write a review?', 'class="link-class"') ?>
+					<button class="btn btn-warning write-review-button">
+						<?php echo anchor('review/create_review/'.$rid, 'Wish to write a review?', 'class="link-class"') ?>
+					</button>
+					
 				</div>
 			</div>
 			<div id="map"></div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-8">
+			<section id="reviews">
+				<?php
+					$reviews = get_restaurant_reviews($rid, 20);
+					foreach($reviews as $review):
+				?>
+
+						<div class="panel panel-warning">
+							<div class="panel-heading">
+	    						<h3 class="panel-title"><?= $review->title; ?></h3>
+	  						</div>
+							<div class="panel-body">
+	    						Panel content
+	  						</div>
+						</div>
+				<?php
+					endforeach
+				?>
+			</section>
 		</div>
 	</div>
 

@@ -24,7 +24,9 @@ class Example extends CI_Controller {
         // $this->aauth->add_member(1,4);
         // $this->aauth->logout();
 
-        // $this->aauth->create_user('asfssd@sfsdf.com', '12312424');
+        // $query = $this->aauth->create_user('rest4@dispostable.come', 'adminadmin'); 
+        // print_r($query);
+        // $this->aauth->add_member($query,4);
 
         // if ($this->aauth->login('test3@some.com', 'adminadmin'))
         //     echo 'tmm';
@@ -33,11 +35,11 @@ class Example extends CI_Controller {
         //echo date("Y-m-d H:i:s");
 
         print $this->aauth->is_loggedin();
-         print_r($this->aauth->get_user());
+        print_r($this->aauth->get_user());
 
 
 
-        // $this->aauth->print_errors();
+        $this->aauth->print_errors();
     }
 
     function debug(){
@@ -45,8 +47,9 @@ class Example extends CI_Controller {
         echo "<pre>";
 
         print_r(
-        //$this->aauth->is_admin()
-        //$this->aauth->get_user()
+            $this->aauth->is_member(4)
+        // $this->aauth->is_admin()
+        // $this->aauth->get_user()
         //$this->aauth->control_group("Mod")
         //$this->aauth->control_perm(1)
         //$this->aauth->list_groups()
@@ -75,7 +78,7 @@ class Example extends CI_Controller {
         //$this->aauth->delete_pm(6)
         //$this->aauth->set_as_read_pm(13)
         //$this->aauth->create_group('aa')
-         $this->aauth->create_perm('asdda')
+         // $this->aauth->create_perm('asdda')
          //''
 
         );

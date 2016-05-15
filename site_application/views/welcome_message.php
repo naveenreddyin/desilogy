@@ -1,5 +1,8 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+print_r($this->session->userdata); 
+// print_r($this->aauth->get_user_groups());
+// echo $this->aauth->is_member(4);
 ?>
 <body>
 <section class="hero">

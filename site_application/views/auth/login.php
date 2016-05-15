@@ -8,6 +8,13 @@
             
           </div>
         <?php } ?>
+        <?php if($this->session->flashdata('error')){ ?>
+          <div class="col-md-6 col-md-offset-3 alert alert-danger">
+            
+              <?php echo $this->session->flashdata('error'); ?>
+            
+          </div>
+        <?php } ?>
       </div>
     </div>
     <div class="container">

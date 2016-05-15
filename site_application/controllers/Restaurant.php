@@ -104,4 +104,9 @@ class Restaurant extends Restaurant_Controller {
 		$this->load->view('/restaurant/browse');
 
 	}
+
+	public function admin($uid){
+
+		
+	}
 }

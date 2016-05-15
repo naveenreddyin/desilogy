@@ -29,6 +29,8 @@ class Welcome extends CI_Controller {
 	public function index()
 	{	 
 		$data['query'] = $this->restaurant->get_last_five_entries();
+		// echo $this->aauth->is_loggedin();
+		
 		$this->load->view('head', $data);
 		$this->load->view('welcome_message');
 	}
@@ -45,7 +47,13 @@ class Welcome extends CI_Controller {
 			$password = $_POST['password'];
 
 			if($this->aauth->login($email, $password)){
+				if($this->aauth->is_member(4))
 					redirect('/');
+				else if ($this->aauth->is_member(5))
+					redirect('restaurant/admin/'.$this->aauth->get_user_id(), 'refresh');
+				else
+					redirect('/');
+
 			}
 				$this->aauth->print_errors();
     	}	

@@ -6,6 +6,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 Logo
 </div>
 <div class="container">
+	<div class="row">
+        <?php if($this->session->flashdata('warning')){ ?>
+          <div class="col-md-6 col-md-offset-3 alert alert-warning">
+            
+              <?php echo $this->session->flashdata('warning'); ?>
+            
+          </div>
+        <?php } ?>
+        <?php if($this->session->flashdata('error')){ ?>
+          <div class="col-md-6 col-md-offset-3 alert alert-danger">
+            
+              <?php echo $this->session->flashdata('error'); ?>
+            
+          </div>
+        <?php } ?>
+    </div>
 	<h1><?= $query->name; ?></h1>
 	<div class="row">
 		<div class="col-md-8">
@@ -21,9 +37,26 @@ Logo
 		<div class="col-md-4">
 			<div class="row">
 				<div class="col-sm-8">
-					<button class="btn btn-warning write-review-button">
-						<?php echo anchor('review/create_review/'.$rid, 'Wish to write a review?', 'class="link-class"') ?>
-					</button>
+						<!-- <button class="btn btn-warning write-review-button">
+							<a href="review/create_review" class="link-class">Update your review?</a>
+						</button>
+ -->						<?php 
+						$uid = $this->aauth->get_user_id();
+						$check_vote = check_user_vote($rid, $uid);
+						// print_r($check_vote);
+						// echo '<a href="review/create_review" class="link-class">Wish to write a review?</a>';
+
+						if ($check_vote && $uid != 0):
+						?>
+						<!-- <a href="../review/create_review/<?= $rid ?>/<?= $check_vote->rvid ?>" class="btn btn-warning write-review-button">Update your review?</a> -->
+						<?php echo anchor('review/create_review/'.$rid.'/'.$check_vote->rvid, 'Update your review', 'class="btn btn-warning write-review-button"') ?>
+						<?php
+						else:
+						?>
+						<!-- <a href="../review/create_review/<?= $rid ?>" class="btn btn-warning write-review-button">Write your review?</a> -->
+						<?php echo anchor('review/create_review/'.$rid, 'Wish to write a review?', 'class="btn btn-warning write-review-button"') ?>
+
+						<?php endif ?>
 					
 				</div>
 			</div>

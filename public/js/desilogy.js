@@ -3,7 +3,11 @@ $( document ).ready(function() {
     restaurant_form_google_places();
     site_validators();
     frontpage_google_places();
+    // $("#images-input").fileinput({
+    //             uploadUrl: '/file-upload-batch/2',
 
+    //     maxFilePreviewSize: 10240
+    // });
     $('#login-form-link').click(function(e) {
         $("#login-form").delay(100).fadeIn(100);
         $("#register-form").fadeOut(100);
@@ -36,9 +40,18 @@ $( document ).ready(function() {
     });
 
     add_more_images();
+
+    delete_update_images();
 });
 
+function delete_update_images(){
 
+    $('.delete-update-image').on('click', function(){
+        console.log($(this).parent().find('input'));
+        $(this).parent().find('input').remove();
+        $(this).parent().hide();
+    });
+}
 function initializers(){
 
     $('.clockpicker1').clockpicker();

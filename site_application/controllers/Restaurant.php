@@ -107,6 +107,7 @@ class Restaurant extends Restaurant_Controller {
 
 	public function admin($uid){
 
-		
+		$this->load->view('restaurant/admin/admin-head');
+		$this->load->view('restaurant/admin/admin-view');
 	}
 }

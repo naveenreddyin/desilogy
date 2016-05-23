@@ -38,8 +38,11 @@ class Restaurant extends Restaurant_Controller {
 			        'value' => '',
 			        'class' => 'form-control'
 			);
-		$this->load->view('head');
-		$this->load->view('restaurant_index', $data);
+		// $this->load->view('head');
+		// $this->load->view('restaurant_index', $data);
+		$this->load->view('restaurant/admin/admin-head');
+		$this->load->view('restaurant/admin/add-restaurant', $data);
+
 	}
 
 	public function create_restaurant(){

@@ -8,6 +8,8 @@
     <meta name="author" content="">
      <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="<?= asset_url()?>css/bootstrap-clockpicker.min.css">
+
 
     <!-- MetisMenu CSS -->
     <link href="<?= asset_url() ?>css/metisMenu.css" rel="stylesheet">

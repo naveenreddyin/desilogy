@@ -347,232 +347,183 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	            </div>
 	            <!-- /.row -->
 	            <div class="row">
-	                <div class="col-lg-3 col-md-6">
-	                    <div class="panel panel-primary">
-	                        <div class="panel-heading">
-	                            <div class="row">
-	                                <div class="col-xs-3">
-	                                    <i class="fa fa-comments fa-5x"></i>
-	                                </div>
-	                                <div class="col-xs-9 text-right">
-	                                    <div class="huge"><?php 
-	                                    $count = get_restaurant_reviews_count_by_uid($this->aauth->get_user_id());
-	                                    if($count)
-	                                    	echo $count->count;
-	                                    else
-	                                    	echo '0';
+	                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Add your restaurant here
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <?php 
+		echo form_open_multipart('restaurant/create_restaurant', array('method'=>'POST', 'id' => 'form-restaurant-id')); 
+		?>
+		<div class="form-group">
+    		<label for="name">Name</label>
+    		<?php echo form_input($name_form_data); ?>
+  		</div>
+		<div class="form-group">
+    		<label for="body">Body</label>
+    		<?php echo form_textarea($body_form_data); ?>
+  		</div>
+  		<div class="form-group">
+  			<div class="row">
+      			<div class="col-sm-3"><label>First name</label><input type="text" name="firstname" id="firstname" class="form-control" placeholder="First"/>
+      			</div>
+      			<div class="col-sm-3"><label>Last name</label><input type="text" name="lastname" class="form-control" placeholder="Last"/></div>
+      		</div>
+    	</div>
+  		
+		<div class="form-group">
+			<div class="row">
+				<div class="col-sm-6">
+					<label>Enter City and Country</label>
+					<input name="address" id="address" type="text" placeholder="Start typing your address" class="form-control"/>
+				</div>
 
-	                                    	?></div>
-	                                    <div>New Comments!</div>
-	                                </div>
-	                            </div>
-	                        </div>
-	                        <a href="#">
-	                            <div class="panel-footer">
-	                                <span class="pull-left">View Details</span>
-	                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-	                                <div class="clearfix"></div>
-	                            </div>
-	                        </a>
-	                    </div>
-	                </div>
-	                <div class="col-lg-3 col-md-6">
-	                    <div class="panel panel-green">
-	                        <div class="panel-heading">
-	                            <div class="row">
-	                                <div class="col-xs-3">
-	                                    <i class="fa fa-tasks fa-5x"></i>
-	                                </div>
-	                                <div class="col-xs-9 text-right">
-	                                    <div class="huge">12</div>
-	                                    <div>New Tasks!</div>
-	                                </div>
-	                            </div>
-	                        </div>
-	                        <a href="#">
-	                            <div class="panel-footer">
-	                                <span class="pull-left">View Details</span>
-	                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-	                                <div class="clearfix"></div>
-	                            </div>
-	                        </a>
-	                    </div>
-	                </div>
-	                <div class="col-lg-3 col-md-6">
-	                    <div class="panel panel-yellow">
-	                        <div class="panel-heading">
-	                            <div class="row">
-	                                <div class="col-xs-3">
-	                                    <i class="fa fa-shopping-cart fa-5x"></i>
-	                                </div>
-	                                <div class="col-xs-9 text-right">
-	                                    <div class="huge">124</div>
-	                                    <div>New Orders!</div>
-	                                </div>
-	                            </div>
-	                        </div>
-	                        <a href="#">
-	                            <div class="panel-footer">
-	                                <span class="pull-left">View Details</span>
-	                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-	                                <div class="clearfix"></div>
-	                            </div>
-	                        </a>
-	                    </div>
-	                </div>
-	                <div class="col-lg-3 col-md-6">
-	                    <div class="panel panel-red">
-	                        <div class="panel-heading">
-	                            <div class="row">
-	                                <div class="col-xs-3">
-	                                    <i class="fa fa-support fa-5x"></i>
-	                                </div>
-	                                <div class="col-xs-9 text-right">
-	                                    <div class="huge">13</div>
-	                                    <div>Support Tickets!</div>
-	                                </div>
-	                            </div>
-	                        </div>
-	                        <a href="#">
-	                            <div class="panel-footer">
-	                                <span class="pull-left">View Details</span>
-	                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-	                                <div class="clearfix"></div>
-	                            </div>
-	                        </a>
-	                    </div>
-	                </div>
+			</div>
+		</div>
+		<div class="form-group" id="field-data-restaurant-postal-street-group">
+			<div class="row">
+				<div class="col-sm-3">
+					<label>Street</label>
+					<input id="street" name="street" type="text" placeholder="Street" class="form-control"/>
+				</div>
+				<div class="col-sm-3">
+					<label>Postal Code</label>
+					<input id="postal-code" name="postal_code" type="text" placeholder="Postal Code" class="form-control"/>
+				</div>
+				
+			</div>
+		</div>
+		<div class="form-group" id="field-data-restaurant-city-country-group">
+			
+			<div class="row">
+				<div class="col-sm-3">
+					<label>City</label>
+					<input id="city" type="text" placeholder="City" class="form-control" name="city"/>
+				</div>
+				<div class="col-sm-3">
+					<label>Country</label>
+					<input id="country" type="text" placeholder="Country" class="form-control" name="country"/>
+					<input type="hidden" id="lat" name="lat" />
+					<input type="hidden" id="long" name="long" />
+				</div>
+				
+			</div>
+
+		</div>
+
+		<div class="form-group">
+			
+			<div class="row">
+				<div class="col-sm-3">
+					<label>Phone</label>
+					<input name="phone" id="phone" type="tel" placeholder="Enter Phone with country code" class="form-control"/>
+				</div>
+				
+				
+			</div>
+
+		</div>
+		<div class="form-group">
+			
+			<div class="row">
+				<div class="col-sm-3">
+					<label>Website</label>
+					<input name="website" id="website" type="url" placeholder="Enter your restaurants website." class="form-control">
+				</div>
+				
+				
+			</div>
+
+		</div>
+
+		<div class="form-group">
+			
+			<div class="row">
+				<div class="col-sm-4">
+					<label>Main Image</label>
+    				<input type="file" name="restaurant_main_image" class="form-control">
+    				<p class="help-block">Show an image of your restaurant to your users.</p>
+				</div>
+			</div>
+
+		</div>
+		
+		<div class="form-group">
+			<div class="row">
+				<div class="col-sm-3">
+					<label>Open From</label>
+					<div class="input-group clockpicker1" data-donetext="Done" data-default="now">
+							    <input type="text" class="form-control" name="from_time" placeholder="now">
+							    <span class="input-group-addon">
+							        <span class="glyphicon glyphicon-time"></span>
+							    </span>
+					</div>
+				</div>
+				<div class="col-sm-3">
+					<label>Open Till</label>
+					<div class="input-group clockpicker2" data-donetext="Done" data-default="now">
+							    <input type="text" class="form-control" name="till_time" placeholder="now">
+							    <span class="input-group-addon">
+							        <span class="glyphicon glyphicon-time"></span>
+							    </span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="form-group">
+			<label>Open on?</label>
+			<label class="checkbox-inline">
+	  			<input type="checkbox" id="inlineCheckbox1" value="mon"> Monday
+			</label>
+			<label class="checkbox-inline">
+	  			<input type="checkbox" id="inlineCheckbox2" value="tue"> Tuesday
+			</label>
+			<label class="checkbox-inline">
+	  			<input type="checkbox" id="inlineCheckbox2" value="wed"> Wednesday
+			</label>
+			<label class="checkbox-inline">
+	  			<input type="checkbox" id="inlineCheckbox2" value="thu"> Thursday
+			</label>
+			<label class="checkbox-inline">
+	  			<input type="checkbox" id="inlineCheckbox2" value="fri"> Friday
+			</label>
+			<label class="checkbox-inline">
+	  			<input type="checkbox" id="inlineCheckbox2" value="sat"> Saturday
+			</label>
+			<label class="checkbox-inline">
+	  			<input type="checkbox" id="inlineCheckbox2" value="sun"> Sunday
+			</label>
+		</div>
+		
+
+    	<div class="form-group">
+    		<div class="row">
+	      		<div class="col-sm-6">
+			  		<?php
+					echo form_submit('add_restaurant', 'Add Restaurant', "class='btn btn-default'");
+
+					?>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+                                </div>
+                                
+                            </div>
+                            <!-- /.row (nested) -->
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-12 -->
 	            </div>
 	            <!-- /.row -->
-	            <div class="row">
-	                <div class="col-lg-8">
-	                    <div class="panel panel-default">
-	                        <div class="panel-heading">
-	                            <i class="fa fa-bar-chart-o fa-fw"></i> Area Chart Example
-	                            <!-- <div class="pull-right">
-	                                <div class="btn-group">
-	                                    <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
-	                                        Actions
-	                                        <span class="caret"></span>
-	                                    </button>
-	                                    <ul class="dropdown-menu pull-right" role="menu">
-	                                        <li><a href="#">Action</a>
-	                                        </li>
-	                                        <li><a href="#">Another action</a>
-	                                        </li>
-	                                        <li><a href="#">Something else here</a>
-	                                        </li>
-	                                        <li class="divider"></li>
-	                                        <li><a href="#">Separated link</a>
-	                                        </li>
-	                                    </ul>
-	                                </div>
-	                            </div> -->
-	                        </div>
-	                        <!-- /.panel-heading -->
-	                        <div class="panel-body">
-	                        	<div>
-
-								  <!-- Nav tabs -->
-								  <ul class="nav nav-tabs" role="tablist">
-								    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
-								    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab" data-tab-url="www.google.com">Profile</a></li>
-								    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li>
-								    <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
-								  </ul>
-
-								  <!-- Tab panes -->
-								  <div class="tab-content">
-								    <div role="tabpanel" class="tab-pane fade in active" id="home">...</div>
-								    <div role="tabpanel" class="tab-pane fade" id="profile">...</div>
-								    <div role="tabpanel" class="tab-pane fade" id="messages">...</div>
-								    <div role="tabpanel" class="tab-pane fade" id="settings">...</div>
-								  </div>
-
-								</div>
-	                            <div id="morris-area-chart"></div>
-	                        </div>
-	                        <!-- /.panel-body -->
-	                    </div>
-	                   	                    
-	                </div>
-	                <!-- /.col-lg-8 -->
-	                <div class="col-lg-4">
-	                    <div class="panel panel-default">
-	                        <div class="panel-heading">
-	                            <i class="fa fa-bell fa-fw"></i> Notifications Panel
-	                        </div>
-	                        <!-- /.panel-heading -->
-	                        <div class="panel-body">
-	                            <div class="list-group">
-	                                <a href="#" class="list-group-item">
-	                                    <i class="fa fa-comment fa-fw"></i> New Comment
-	                                    <span class="pull-right text-muted small"><em>4 minutes ago</em>
-	                                    </span>
-	                                </a>
-	                                <a href="#" class="list-group-item">
-	                                    <i class="fa fa-twitter fa-fw"></i> 3 New Followers
-	                                    <span class="pull-right text-muted small"><em>12 minutes ago</em>
-	                                    </span>
-	                                </a>
-	                                <a href="#" class="list-group-item">
-	                                    <i class="fa fa-envelope fa-fw"></i> Message Sent
-	                                    <span class="pull-right text-muted small"><em>27 minutes ago</em>
-	                                    </span>
-	                                </a>
-	                                <a href="#" class="list-group-item">
-	                                    <i class="fa fa-tasks fa-fw"></i> New Task
-	                                    <span class="pull-right text-muted small"><em>43 minutes ago</em>
-	                                    </span>
-	                                </a>
-	                                <a href="#" class="list-group-item">
-	                                    <i class="fa fa-upload fa-fw"></i> Server Rebooted
-	                                    <span class="pull-right text-muted small"><em>11:32 AM</em>
-	                                    </span>
-	                                </a>
-	                                <a href="#" class="list-group-item">
-	                                    <i class="fa fa-bolt fa-fw"></i> Server Crashed!
-	                                    <span class="pull-right text-muted small"><em>11:13 AM</em>
-	                                    </span>
-	                                </a>
-	                                <a href="#" class="list-group-item">
-	                                    <i class="fa fa-warning fa-fw"></i> Server Not Responding
-	                                    <span class="pull-right text-muted small"><em>10:57 AM</em>
-	                                    </span>
-	                                </a>
-	                                <a href="#" class="list-group-item">
-	                                    <i class="fa fa-shopping-cart fa-fw"></i> New Order Placed
-	                                    <span class="pull-right text-muted small"><em>9:49 AM</em>
-	                                    </span>
-	                                </a>
-	                                <a href="#" class="list-group-item">
-	                                    <i class="fa fa-money fa-fw"></i> Payment Received
-	                                    <span class="pull-right text-muted small"><em>Yesterday</em>
-	                                    </span>
-	                                </a>
-	                            </div>
-	                            <!-- /.list-group -->
-	                            <a href="#" class="btn btn-default btn-block">View All Alerts</a>
-	                        </div>
-	                        <!-- /.panel-body -->
-	                    </div>
-	                    <!-- /.panel -->
-	                    <!-- <div class="panel panel-default">
-	                        <div class="panel-heading">
-	                            <i class="fa fa-bar-chart-o fa-fw"></i> Donut Chart Example
-	                        </div>
-	                        <div class="panel-body">
-	                            <div id="morris-donut-chart"></div>
-	                            <a href="#" class="btn btn-default btn-block">View Details</a>
-	                        </div>
-	                        <!-- /.panel-body -->
-	                    <!-- </div> --> 
-	                    <!-- /.panel -->
-	                    
-	                </div>
-	                <!-- /.col-lg-4 -->
-	            </div>
-	            <!-- /.row -->
+	            
 	        </div>
 	        <!-- /#page-wrapper -->
 
@@ -594,6 +545,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 	    <!-- Custom Theme JavaScript -->
 	    <script src="<?= asset_url() ?>js/sb-admin-2.js"></script>
+	    	<script type="text/javascript" src="<?= asset_url() ?>js/bootstrap-clockpicker.min.js"></script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.0/jquery.validate.js"></script>
+	    <script src="<?= asset_url() ?>js/restaurant-admin.js"></script>
+
+
 
 	</body>
 

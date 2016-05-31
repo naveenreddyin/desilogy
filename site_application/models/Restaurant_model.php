@@ -35,6 +35,17 @@
                 return $query->result();
         }
 
+        public function get_restaurant_by_uid($uid){
+
+            $sql = "SELECT rid, name
+                FROM `restaurant`
+                WHERE `uid` = " . $uid . ""; 
+            $query = $this->db->query($sql);
+
+            return $query->result();
+
+        }
+
         public function get_restaurant_details_by_uid($uid){
                 $query = $this->db->select('*')->
                 from('restaurant')

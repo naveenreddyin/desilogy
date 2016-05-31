@@ -29,4 +29,21 @@ function get_restaurant_reviews_count_by_uid($uid){
    		return FALSE;
 }
 
+
+function get_restaurant_for_user($uid){
+
+	$ci =& get_instance();
+	$ci->load->database();
+	$ci->load->model('restaurant_model', 'restaurant');
+
+	$query = $ci->restaurant->get_restaurant_by_uid($uid);
+
+	if($query)
+		return $query;
+	else
+		return FALSE;
+
+
+}
+
 ?>

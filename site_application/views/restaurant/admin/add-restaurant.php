@@ -254,18 +254,33 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	                                    <a href="../index">Add Restaurants</a>
 	                                </li>
 	                                <li>
-	                                    <a href="morris.html">Manage Restaurants</a>
+	                                    <a href="morris.html">Manage Restaurants <span class="fa arrow"></span></a>
+	                                    <ul class="nav nav-third-level">
+	                                    <?php 
+	                                    $query = get_restaurant_for_user($this->aauth->get_user_id());
+	                                    // print_r($query);
+	                                    if($query){
+	                                    	foreach($query as $item){
+	                                    ?>
+	                                        <li>
+	                                            <a href="#"><?= $item->name; ?></a>
+	                                        </li>
+	                                     <?php 
+	                                 		}	
+	                                 	} 
+	                                 	?>
+	                                    </ul>
 	                                </li>
 	                            </ul>
 	                            <!-- /.nav-second-level -->
 	                        </li>
-	                        <li>
+	                        <!-- <li>
 	                            <a href="tables.html"><i class="fa fa-table fa-fw"></i> Tables</a>
 	                        </li>
 	                        <li>
 	                            <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Forms</a>
-	                        </li>
-	                        <li>
+	                        </li> -->
+	                        <!-- <li>
 	                            <a href="#"><i class="fa fa-wrench fa-fw"></i> UI Elements<span class="fa arrow"></span></a>
 	                            <ul class="nav nav-second-level">
 	                                <li>
@@ -288,7 +303,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	                                </li>
 	                            </ul>
 	                            <!-- /.nav-second-level -->
-	                        </li>
+	                        <!-- </li> --> 
 	                        <li>
 	                            <a href="#"><i class="fa fa-sitemap fa-fw"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
 	                            <ul class="nav nav-second-level">

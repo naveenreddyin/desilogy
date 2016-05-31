@@ -73,7 +73,7 @@ Logo
 				?>
 
 						<div class="panel panel-warning">
-							<div class="panel-heading">
+							<div class="panel-heading" id="review-<?= hash('ripemd160',$review->rvid) ?>">
 	    						<h3 class="panel-title"><?= $review->title; ?></h3>
 	  						</div>
 							<div class="panel-body">

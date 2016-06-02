@@ -1,6 +1,7 @@
 $( document ).ready(function() {
 initializers();
 admin_validators();
+google_places_initializor();
 
 });
 
@@ -28,7 +29,73 @@ function admin_validators(){
             lastname: "Please enter Last Name.",
             address: "Please enter your address.",
 
-
         }
     });
+}
+
+function google_places_initializor(){
+    // For address box on restaurant page.
+    google.maps.event.addDomListener(window, 'load', function () {
+                var places = new google.maps.places.Autocomplete(document.getElementById('address'));
+                google.maps.event.addListener(places, 'place_changed', function () {
+                    var place = places.getPlace();
+                    console.log(place);
+                    // var address = place.formatted_address;
+                    // var latitude = place.geometry.location.A;
+                    // var longitude = place.geometry.location.F;
+                    // var mesg = "Address: " + address;
+                    // mesg += "\nLatitude: " + latitude;
+                    // mesg += "\nLongitude: " + longitude;
+                    // alert(mesg);
+                    // console.log(place.geometry.location.lat());
+                    
+                    $('#lat').val(place.geometry.location.lat());
+                    $('#long').val(place.geometry.location.lng());
+                    var city = getAddressComponent(place, 'locality');
+                    var postal_town = getAddressComponent(place, 'postal_town');
+                    var country = getAddressComponent(place, 'country');
+                    var postal_code = getAddressComponent(place, 'postal_code');
+                    var street = getAddressComponent(place, 'route');
+                    // console.log(postal_code);
+                    // console.log(getAddressComponent(place, 'locality'));
+                    // console.log(getAddressComponent(place, 'country'));
+
+                    if(city == '')
+                        $('#city').val(postal_town);
+                    else
+                        $('#city').val(city);
+
+                    $('#country').val(country);
+
+                    $('#field-data-restaurant-city-country-group').show();
+
+                    if(postal_code != null){
+                        $('#postal-code').val(postal_code);
+                        $('#street').val(street);
+                        $('#field-data-restaurant-postal-street-group').show();
+                    }
+                    
+
+                });
+    });
+}
+
+function getAddressComponent(place, token) {
+    var arrAddress = place.address_components;
+    var value = '';
+
+    // iterate through address_component array
+    $.each(arrAddress, function (i, address_component) {
+        // console.log('address_component:'+i);
+
+        if (address_component.types[0] == token){
+            console.log(i+": "+token+":"+address_component.long_name);
+            value = address_component.long_name;
+        }
+
+        
+        //return false; // break the loop   
+    });
+
+    return value;
 }

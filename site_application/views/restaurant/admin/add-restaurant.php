@@ -251,7 +251,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Restaurants<span class="fa arrow"></span></a>
 	                            <ul class="nav nav-second-level">
 	                                <li>
-	                                    <a href="../index">Add Restaurants</a>
+	                                    <a href="<?= site_url('restaurant/index') ?>">Add Restaurants</a>
 	                                </li>
 	                                <li>
 	                                    <a href="morris.html">Manage Restaurants <span class="fa arrow"></span></a>
@@ -304,7 +304,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	                            </ul>
 	                            <!-- /.nav-second-level -->
 	                        <!-- </li> --> 
-	                        <li>
+	                        <!-- <li>
 	                            <a href="#"><i class="fa fa-sitemap fa-fw"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
 	                            <ul class="nav nav-second-level">
 	                                <li>
@@ -330,11 +330,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	                                        </li>
 	                                    </ul>
 	                                    <!-- /.nav-third-level -->
-	                                </li>
-	                            </ul>
+	                                <!-- </li> -->
+	                            <!-- </ul> -->
 	                            <!-- /.nav-second-level -->
-	                        </li>
-	                        <li>
+	                        <!-- </li> --> 
+	                        <!-- <li>
 	                            <a href="#"><i class="fa fa-files-o fa-fw"></i> Sample Pages<span class="fa arrow"></span></a>
 	                            <ul class="nav nav-second-level">
 	                                <li>
@@ -345,7 +345,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	                                </li>
 	                            </ul>
 	                            <!-- /.nav-second-level -->
-	                        </li>
+	                        <!-- </li> --> 
 	                    </ul>
 	                </div>
 	                <!-- /.sidebar-collapse -->
@@ -359,6 +359,27 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	                    <h1 class="page-header">Dashboard</h1>
 	                </div>
 	                <!-- /.col-lg-12 -->
+			        <?php if($this->session->flashdata('warning')){ ?>
+			          <div class="col-md-6 col-md-offset-3 alert alert-warning">
+			            
+			              <?php echo $this->session->flashdata('warning'); ?>
+			            
+			          </div>
+			        <?php } ?>
+			        <?php if($this->session->flashdata('error')){ ?>
+			          <div class="col-md-6 col-md-offset-3 alert alert-danger">
+			            
+			              <?php echo $this->session->flashdata('error'); ?>
+			            
+			          </div>
+			        <?php } ?>
+			        <?php if($this->session->flashdata('success')){ ?>
+			          <div class="col-md-6 col-md-offset-3 alert alert-success">
+			            
+			              <?php echo $this->session->flashdata('success'); ?>
+			            
+			          </div>
+			        <?php } ?>
 	            </div>
 	            <!-- /.row -->
 	            <div class="row">

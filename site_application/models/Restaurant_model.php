@@ -74,9 +74,14 @@
 
         }
 
-        public function insert_entry()
+        public function insert_entry($uid)
         {
-                $data = array('name' => $_POST['name'], 'body' => $_POST['body'], 'created' => time());
+                $data = array(
+                    'name' => $_POST['name'],
+                    'body' => $_POST['body'],
+                    'uid' => $uid,
+                    'created' => time()
+                    );
 
                 $this->db->insert($this->restaurant_table_name, $data);
 
@@ -142,6 +147,15 @@
                         );
 
                 $this->db->insert($this->field_data_main_image, $data);
+        }
+
+        public function delete_restaurant($rid){
+            $this->db->delete($this->restaurant_table_name, array('rid' => $rid));
+            $this->db->delete($this->field_data_main_image, array('rid' => $rid));
+            $this->db->delete($this->field_data_phone, array('rid' => $rid));
+            $this->db->delete($this->field_data_address, array('rid' => $rid));
+            $this->db->delete($this->field_data_name, array('rid' => $rid));
+
         }
 
         public function update_entry()

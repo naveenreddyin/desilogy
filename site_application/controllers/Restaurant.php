@@ -5,6 +5,12 @@ include_once(APPPATH.'core/Restaurant_Controller.php');
 
 class Restaurant extends Restaurant_Controller {
 
+	public function __construct() {
+        parent::__construct();
+        // Your own constructor code
+        $this->load->library("Aauth");
+    }
+
 	/**
 	 * Index Page for this controller.
 	 *
@@ -52,7 +58,7 @@ class Restaurant extends Restaurant_Controller {
 
 		$data = array();
 
-		$inserted_id = $this->restaurant->insert_entry();
+		$inserted_id = $this->restaurant->insert_entry($this->aauth->get_user_id());
 
 		$this->restaurant->insert_name_entry($inserted_id);
 
@@ -93,7 +99,24 @@ class Restaurant extends Restaurant_Controller {
 			}
 		}
 
-		redirect('restaurant/browse/'.$inserted_id, 'refresh');
+		// redirect('restaurant/browse/'.$inserted_id, 'refresh');
+		$this->session->set_flashdata('success', 'Your restaurant has been added. ');
+		redirect('restaurant', 'refresh');
+	}
+
+	public function delete($rid){
+		$data['rid'] = $rid;
+		$this->load->model('restaurant_model', 'restaurant');
+		$query = $this->restaurant->get_restaurant_details($rid);
+
+		if($query->uid == $this->aauth->get_user_id()){
+			$this->load->model('restaurant_model', 'restaurant');
+			$this->restaurant->delete_restaurant($rid);
+			echo "deleted restaurant";
+		}
+
+		
+
 	}
 
 	public function browse($rid){

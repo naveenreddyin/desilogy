@@ -69,6 +69,16 @@
 
         }
 
+        public function get_restaurant_review_images_by_rid($rid){
+            $query = $this->db->select('images.filename')->
+            from($this->review_table)
+            ->join('field_review_images as images', 'images.rvid = review.rvid', 'left')
+            ->where(array('review.rid' => $rid))->get();
+            // print_r($query->row());
+
+            return $query->row();
+        }
+
         public function get_review_count_by_uid($uid){
             $sql = "SELECT count(restaurant.rid) as count FROM desilogy.restaurant as restaurant JOIN desilogy.review as review ON review.rid = restaurant.rid where restaurant.uid = 17";
             $query = $this->db->query($sql);

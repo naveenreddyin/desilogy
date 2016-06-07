@@ -46,4 +46,20 @@ function get_restaurant_for_user($uid){
 
 }
 
+function get_restaurant_images($rid){
+
+	$ci =& get_instance();
+	$ci->load->database();
+	$ci->load->model('review_model', 'review');
+
+	$query = $ci->review->get_restaurant_review_images_by_rid($rid);
+
+	if($query)
+		return $query;
+	else
+		return FALSE;
+
+
+}
+
 ?>

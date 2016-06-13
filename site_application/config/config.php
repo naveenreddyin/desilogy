@@ -23,7 +23,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://localhost/desilogy/';
+$env = getenv('APPLICATION_ENV');
+switch ($env) {
+	case 'stage':
+		$config['base_url'] = 'https://desilogy.herokuapp.com/';
+		break;
+	
+	case 'development':
+		$config['base_url'] = 'http://localhost/desilogy/';
+		break;
+}
+
 
 /*
 |--------------------------------------------------------------------------

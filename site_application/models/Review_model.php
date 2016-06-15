@@ -80,7 +80,7 @@
         }
 
         public function get_review_count_by_uid($uid){
-            $sql = "SELECT count(restaurant.rid) as count FROM desilogy.restaurant as restaurant JOIN desilogy.review as review ON review.rid = restaurant.rid where restaurant.uid = 17";
+            $sql = "SELECT count(restaurant.rid) as count FROM restaurant as restaurant JOIN review as review ON review.rid = restaurant.rid where restaurant.uid = 17";
             $query = $this->db->query($sql);
 
             // print_r($query->row());

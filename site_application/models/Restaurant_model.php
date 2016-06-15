@@ -177,8 +177,8 @@
             $sql_query = "select rid,number_of_restaurants,number_of_reviews,((avg_num_votes * avg_rating) + (this_num_votes * this_rating)) / (avg_num_votes + this_num_votes) as real_rating
 from (select `field_data_review_votes`.`rid`
 AS `rid`,
-(select count(rvid) from desilogy.review where desilogy.review.rid = `field_data_review_votes`.`rid`) as number_of_reviews,
-(select count(rid) FROM desilogy.field_data_restaurant_address where city = ".$city.") as number_of_restaurants,((select count(`field_data_review_votes`.`rid`) 
+(select count(rvid) from review where review.rid = `field_data_review_votes`.`rid`) as number_of_reviews,
+(select count(rid) FROM field_data_restaurant_address where city = ".$city.") as number_of_restaurants,((select count(`field_data_review_votes`.`rid`) 
 from `field_data_review_votes`) / (select count(distinct `field_data_review_votes`.`rid`) 
 from `field_data_review_votes`)) AS `avg_num_votes`,
 (select avg(`field_data_review_votes`.`overall`) from `field_data_review_votes`) 

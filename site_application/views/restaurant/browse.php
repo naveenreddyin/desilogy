@@ -29,6 +29,7 @@ Logo
 		  <li role="presentation" class="active"><a href="#">Home</a></li>
 		  <li role="presentation"><a href="#reviews">Reviews</a></li>
 		  <li role="presentation"><a href="#show-map">Map</a></li>
+		  <li role="presentation"><a href="#" data-toggle="modal" data-target="#myModal">Photos</a></li>
 		</ul>
 			<div class="short-text">
 				<?= $query->body; ?>

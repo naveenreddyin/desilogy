@@ -247,7 +247,7 @@ CREATE TABLE `aauth_users` (
 
 LOCK TABLES `aauth_users` WRITE;
 /*!40000 ALTER TABLE `aauth_users` DISABLE KEYS */;
-INSERT INTO `aauth_users` VALUES (1,'admin@example.com','dd5073c93fb477a167fd69072e95455834acd93df8fed41a2c468c45b394bfe3','Admin',0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0),(6,'test1@some.com','8868da957eb5d1c8680e334a6cfa8d6306fb15ca7ae90b5a756b46c314f6ba04','',0,'2016-05-15 15:04:41','2016-05-15 15:04:41','2016-05-15 15:00:00',NULL,NULL,NULL,NULL,NULL,'::1',NULL),(11,'test1@dispostable.come','af3ffac926dd0fdd756bb06e961a9f00a0bc39ab831f0f9611cb72d17e38ab1a','',0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0),(12,'test2@dispostable.come','d0c04b45a93a6dee3958dee993f657a8cc7172efccee889f4596b56262aad026','',0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0),(13,'test3@dispostable.come','17b7648c04a24180c49b7e9ff7610638dc8b29f6bd46264388bd6ab221dd4d9d','',0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0),(14,'test4@dispostable.come','133bb62ca72cc4032ef56b35bbe27851bb41d4b98fba4c911a4c922577d44aa3','',0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0),(15,'test5@dispostable.come','06b14a136c85dc04201b7b72c7f17e69833d6e9a7f0fcd3cb7de1378fffea200','',0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0),(16,'test6@dispostable.come','727fa3c03008f48a01f7f60ee260d8dfc51cce0c311eecaf21cceb927e6c9abe','',0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0),(17,'rest1@dispostable.come','551969e45fbdeda978141ea7c7be6fdab43d0fd691a6ed1ef4c3521602ff3d51','',0,'2016-05-16 09:21:01','2016-05-16 09:21:01','2016-05-16 09:00:00',NULL,NULL,NULL,NULL,NULL,'::1',NULL),(18,'rest2@dispostable.come','901736d6f0d8d8e2e39c065a134457f04c7ec8981986cea2cb7c7029f121a65f','',0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0),(19,'rest3@dispostable.come','7374b3c03f665bf7929612a6dce0cfe7a5096cacd97fba286c39469d5a4a075f','',0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0),(20,'rest4@dispostable.come','24b4760b04d3b850dc45ef4b71b2b30f87da149646de319d0e381fb1edd5f8dc','',0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0);
+INSERT INTO `aauth_users` VALUES (1,'admin@example.com','dd5073c93fb477a167fd69072e95455834acd93df8fed41a2c468c45b394bfe3','Admin',0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0),(6,'test1@some.com','8868da957eb5d1c8680e334a6cfa8d6306fb15ca7ae90b5a756b46c314f6ba04','',0,'2016-06-03 04:49:24','2016-06-03 04:49:24','2016-06-03 04:00:00',NULL,NULL,NULL,NULL,NULL,'::1',NULL),(11,'test1@dispostable.come','af3ffac926dd0fdd756bb06e961a9f00a0bc39ab831f0f9611cb72d17e38ab1a','',0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0),(12,'test2@dispostable.come','d0c04b45a93a6dee3958dee993f657a8cc7172efccee889f4596b56262aad026','',0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0),(13,'test3@dispostable.come','17b7648c04a24180c49b7e9ff7610638dc8b29f6bd46264388bd6ab221dd4d9d','',0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0),(14,'test4@dispostable.come','133bb62ca72cc4032ef56b35bbe27851bb41d4b98fba4c911a4c922577d44aa3','',0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0),(15,'test5@dispostable.come','06b14a136c85dc04201b7b72c7f17e69833d6e9a7f0fcd3cb7de1378fffea200','',0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0),(16,'test6@dispostable.come','727fa3c03008f48a01f7f60ee260d8dfc51cce0c311eecaf21cceb927e6c9abe','',0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0),(17,'rest1@dispostable.come','551969e45fbdeda978141ea7c7be6fdab43d0fd691a6ed1ef4c3521602ff3d51','',0,'2016-06-13 18:32:25','2016-06-13 18:32:25','2016-06-13 18:00:00',NULL,NULL,NULL,NULL,NULL,'::1',NULL),(18,'rest2@dispostable.come','901736d6f0d8d8e2e39c065a134457f04c7ec8981986cea2cb7c7029f121a65f','',0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0),(19,'rest3@dispostable.come','7374b3c03f665bf7929612a6dce0cfe7a5096cacd97fba286c39469d5a4a075f','',0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0),(20,'rest4@dispostable.come','24b4760b04d3b850dc45ef4b71b2b30f87da149646de319d0e381fb1edd5f8dc','',0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0);
 /*!40000 ALTER TABLE `aauth_users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -282,7 +282,7 @@ CREATE TABLE `field_data_restaurant_address` (
 
 LOCK TABLES `field_data_restaurant_address` WRITE;
 /*!40000 ALTER TABLE `field_data_restaurant_address` DISABLE KEYS */;
-INSERT INTO `field_data_restaurant_address` VALUES (1,'Oslo','Norway','0184','Stenersgata','Wärtsilä Norway AS, Stenersgata, Oslo, Norway',59.913006200000,10.751490800000),(2,'Oslo','Norway','0186','Christian Krohgs gate','Christian Krohgs gate 16, Oslo, Norway',59.914981000000,10.758839700000),(3,'Bristol','United Kingdom','','','Bristol, United Kingdom',51.454513000000,-2.587910000000),(4,'Oslo','Norway','0186','Tollbugata','Tollbugata, Oslo, Norway',59.910428500000,10.744264200000),(5,'','','','','',0.000000000000,0.000000000000);
+INSERT INTO `field_data_restaurant_address` VALUES (1,'Oslo','Norway','0184','Stenersgata','Wärtsilä Norway AS, Stenersgata, Oslo, Norway',59.913006200000,10.751490800000),(2,'Oslo','Norway','0186','Christian Krohgs gate','Christian Krohgs gate 16, Oslo, Norway',59.914981000000,10.758839700000),(3,'Bristol','United Kingdom','','','Bristol, United Kingdom',51.454513000000,-2.587910000000),(4,'Oslo','Norway','0186','Tollbugata','Tollbugata, Oslo, Norway',59.910428500000,10.744264200000);
 /*!40000 ALTER TABLE `field_data_restaurant_address` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -413,7 +413,7 @@ CREATE TABLE `field_data_restaurant_website` (
 
 LOCK TABLES `field_data_restaurant_website` WRITE;
 /*!40000 ALTER TABLE `field_data_restaurant_website` DISABLE KEYS */;
-INSERT INTO `field_data_restaurant_website` VALUES (1,''),(2,''),(3,''),(4,''),(5,'');
+INSERT INTO `field_data_restaurant_website` VALUES (1,''),(2,''),(3,''),(4,''),(5,''),(6,''),(7,''),(8,'');
 /*!40000 ALTER TABLE `field_data_restaurant_website` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -544,6 +544,34 @@ LOCK TABLES `food_menu` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `play_evolutions`
+--
+
+DROP TABLE IF EXISTS `play_evolutions`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `play_evolutions` (
+  `id` int(11) NOT NULL,
+  `hash` varchar(255) NOT NULL,
+  `applied_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `apply_script` mediumtext,
+  `revert_script` mediumtext,
+  `state` varchar(255) DEFAULT NULL,
+  `last_problem` mediumtext,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `play_evolutions`
+--
+
+LOCK TABLES `play_evolutions` WRITE;
+/*!40000 ALTER TABLE `play_evolutions` DISABLE KEYS */;
+/*!40000 ALTER TABLE `play_evolutions` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Temporary view structure for view `ratings`
 --
 
@@ -591,7 +619,7 @@ CREATE TABLE `restaurant` (
   `updated` int(11) NOT NULL DEFAULT '0',
   `uid` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`rid`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -706,4 +734,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-05-23  8:25:36
+-- Dump completed on 2016-07-05  8:22:31

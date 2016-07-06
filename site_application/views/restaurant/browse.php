@@ -119,6 +119,9 @@ Logo
 					endforeach
 				?>
 			</section>
+			<section>
+				<? get_restaurant_images($rid); ?>
+			</section>
 		</div>
 	</div>
 

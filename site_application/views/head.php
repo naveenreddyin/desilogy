@@ -16,8 +16,8 @@
 	<link rel="stylesheet" type="text/css" href="<?= asset_url()?>css/bootstrap-rating.css">
 	<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">
-
-
+	<link href="//cdn.rawgit.com/noelboss/featherlight/1.5.0/release/featherlight.min.css" type="text/css" rel="stylesheet" />
+	<link href="//cdn.rawgit.com/noelboss/featherlight/1.5.0/release/featherlight.gallery.min.css" type="text/css" rel="stylesheet" />
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
@@ -36,7 +36,8 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/typeahead-addresspicker/0.1.4/typeahead-addresspicker.min.js"></script>
 	<!-- <script src="http://weareoutman.github.io/clockpicker/dist/jquery-clockpicker.min.js"></script> -->
 	
-	
+	<script src="//cdn.rawgit.com/noelboss/featherlight/1.5.0/release/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="//cdn.rawgit.com/noelboss/featherlight/1.5.0/release/featherlight.gallery.min.js" type="text/javascript" charset="utf-8"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.0/jquery.validate.js"></script>
 	<script type="text/javascript" src="<?= asset_url() ?>js/shorten.js"></script>
 	<script type="text/javascript" src="<?= asset_url()?>js/tooltip.js"></script>

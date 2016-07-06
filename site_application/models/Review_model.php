@@ -70,11 +70,11 @@
         }
 
         public function get_restaurant_review_images_by_rid($rid){
-            $query = $this->db->select('images.filename')->
-            from($this->review_table)
-            ->join('field_review_images as images', 'images.rvid = review.rvid', 'left')
+            $query = $this->db->select('images.filename, images.path')->
+            from('field_review_images as images')
+            ->join($this->review_table . ' as review', 'review.rvid=images.rvid', 'left')
             ->where(array('review.rid' => $rid))->get();
-            // print_r($query->row());
+            print_r($query->row());
 
             return $query->row();
         }

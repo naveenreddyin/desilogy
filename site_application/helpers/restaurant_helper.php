@@ -53,7 +53,7 @@ function get_restaurant_images($rid){
 	$ci->load->model('review_model', 'review');
 
 	$query = $ci->review->get_restaurant_review_images_by_rid($rid);
-
+	print_r($query);
 	if($query)
 		return $query;
 	else
